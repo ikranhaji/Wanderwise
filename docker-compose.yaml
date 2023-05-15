@@ -3,24 +3,27 @@ volumes:
         external: true
 services:
   mongo:
-    image: mongo:5
+    image: mongo:6
     volumes:
         - mongo-data:/data/db
     environment:
         MONGO_INITDB_ROOT_USERNAME: root
         MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+        - 27017:27017
   fastapi:
     build:
-      context: sample_service
+      context: wanderwise
       dockerfile: Dockerfile.dev
     ports:
       - 8000:8000
     volumes:
-      - ./sample_service:/app
+      - ./wanderwise:/app
     environment:
       DATABASE_URL: mongodb://root:password@mongo
-      DATABASE_NAME: db-name
+      DATABASE_NAME: mongowise
       WAIT_HOSTS: mongo:27017
+      SIGNING_KEY: ${SIGNING_KEY}
   ghi:
     image: node:lts-bullseye
     command: /bin/bash run.sh
@@ -34,4 +37,4 @@ services:
       NODE_ENV: development
       HOST: "0.0.0.0"
       PUBLIC_URL: http://localhost:3000
-      REACT_APP_SAMPLE_SERVICE_API_HOST: ${REACT_APP_SAMPLE_SERVICE_API_HOST}
+      REACT_APP_WANDERWISE_API_HOST: ${REACT_APP_WANDERWISE_API_HOST}
