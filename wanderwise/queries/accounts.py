@@ -2,26 +2,12 @@ from pydantic import BaseModel
 from pymongo.errors import DuplicateKeyError
 from queries.client import MongoQueries
 
-
-class DuplicateAccountError(ValueError):
-    pass
-
-
-class AccountIn(BaseModel):
-    username: str
-    password: str
-    full_name: str
-
-
-class AccountOut(BaseModel):
-    id: str
-    username: str
-    full_name: str
-    hashed_password: str
-
-
-class AccountOutWithPassword(AccountOut):
-    hashed_password: str
+from models.auth import (
+    AccountOutWithPassword,
+    DuplicateAccountError,
+    AccountOut,
+    AccountIn,
+)
 
 
 class AccountQueries(MongoQueries):

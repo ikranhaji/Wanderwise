@@ -9,27 +9,15 @@ from fastapi import (
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
 
-from pydantic import BaseModel
-
-from queries.accounts import (
-    AccountIn,
+from models.auth import (
+    AccountToken,
     AccountOut,
-    AccountQueries,
+    AccountIn,
+    AccountForm,
     DuplicateAccountError,
+    HttpError,
 )
-
-
-class AccountForm(BaseModel):
-    username: str
-    password: str
-
-
-class AccountToken(Token):
-    account: AccountOut
-
-
-class HttpError(BaseModel):
-    detail: str
+from queries.accounts import AccountQueries
 
 
 router = APIRouter()
