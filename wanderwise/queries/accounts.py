@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from pymongo.errors import DuplicateKeyError
 from queries.client import MongoQueries
+from bson.objectid import ObjectId
 
 from models.auth import (
     AccountOutWithPassword,
@@ -29,3 +30,7 @@ class AccountQueries(MongoQueries):
         if result.inserted_id:
             account["id"] = str(result.inserted_id)
         return AccountOut(**account)
+
+    def delete(self, account_id: str):
+        results = self.collection.delete_one({"_id": ObjectId(account_id)})
+        return results.deleted_count > 0

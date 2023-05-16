@@ -54,3 +54,8 @@ async def create_account(
     form = AccountForm(username=info.username, password=info.password)
     token = await authenticator.login(response, request, form, accounts)
     return AccountToken(account=account, **token.dict())
+
+
+@router.delete("/api/accounts/{account_id}")
+def delete_account(account_id: str, accounts: AccountQueries = Depends()):
+    return {"success": accounts.delete(account_id)}
