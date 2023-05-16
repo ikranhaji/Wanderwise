@@ -1,5 +1,3 @@
-from pydantic import BaseModel
-from pymongo.errors import DuplicateKeyError
 from queries.client import MongoQueries
 from bson.objectid import ObjectId
 
