@@ -24,8 +24,7 @@ class WWAuthenticator(Authenticator):
 
     def get_hashed_password(self, account: AccountOutWithPassword):
         # Return the encrypted password value from your
-        # account object
-        print(account)
+        # account object)
         return account.hashed_password
 
     def get_account_data_for_cookie(self, account: AccountOutWithPassword):
