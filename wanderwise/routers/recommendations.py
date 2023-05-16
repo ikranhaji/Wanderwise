@@ -1,10 +1,11 @@
 from fastapi import APIRouter
 import requests
+from models.recommendations import RecommendationIn
 
 router = APIRouter()
 
 @router.post("/recommendations", tags=["Recommendations"])
-async def post_recommendation():
+async def post_recommendation(info: RecommendationIn):
     response = requests.post(
         "https://api.openai.com/v1/chat/completions",
         headers = {
@@ -16,7 +17,7 @@ async def post_recommendation():
                 "messages": [
                     {
                         "role": "assistant",
-                        "content": "Give us recommendations to do at Las Vegas based on food"
+                        "content": f"Give me recommendations to do at {info.location} based on {info.interest}"
                 }
             ]
         }
