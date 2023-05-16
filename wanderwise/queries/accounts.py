@@ -17,29 +17,29 @@ class AccountOut(BaseModel):
     id: str
     username: str
     full_name: str
-    password: str
+    hashed_password: str
 
 
 class AccountOutWithPassword(AccountOut):
-    password: str
+    hashed_password: str
 
 
 class AccountQueries(MongoQueries):
     collection_name = "accounts"
 
     def get(self, username: str) -> AccountOutWithPassword:
-        props = self.collection.find_one({"username": username})
-        if not props:
+        account = self.collection.find_one({"username": username})
+        if not account:
             return None
-        props["id"] = str(props["_id"])
-        return AccountOut(**props)
+        account["id"] = str(account["_id"])
+        return AccountOut(**account)
 
     def create(self, info: AccountIn, password: str) -> AccountOutWithPassword:
-        props = info.dict()
-        props["password"] = password
-        try:
-            self.collection.insert_one(props)
-        except DuplicateKeyError:
+        account = info.dict()
+        if self.get(account["username"]):
             raise DuplicateAccountError()
-        props["id"] = str(props["_id"])
-        return AccountOut(**props)
+        account["hashed_password"] = password
+        result = self.collection.insert_one(account)
+        if result.inserted_id:
+            account["id"] = str(result.inserted_id)
+        return AccountOut(**account)
