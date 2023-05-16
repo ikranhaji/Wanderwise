@@ -1,4 +1,3 @@
-# router.py
 from fastapi import (
     Depends,
     HTTPException,
@@ -10,27 +9,15 @@ from fastapi import (
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
 
-from pydantic import BaseModel
-
-from queries.accounts import (
-    AccountIn,
+from models.auth import (
+    AccountToken,
     AccountOut,
-    AccountQueries,
+    AccountIn,
+    AccountForm,
     DuplicateAccountError,
+    HttpError,
 )
-
-
-class AccountForm(BaseModel):
-    username: str
-    password: str
-
-
-class AccountToken(Token):
-    account: AccountOut
-
-
-class HttpError(BaseModel):
-    detail: str
+from queries.accounts import AccountQueries
 
 
 router = APIRouter()
@@ -67,3 +54,8 @@ async def create_account(
     form = AccountForm(username=info.username, password=info.password)
     token = await authenticator.login(response, request, form, accounts)
     return AccountToken(account=account, **token.dict())
+
+
+@router.delete("/api/accounts/{account_id}")
+def delete_account(account_id: str, accounts: AccountQueries = Depends()):
+    return {"success": accounts.delete(account_id)}

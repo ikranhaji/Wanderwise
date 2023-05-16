@@ -1,45 +1,36 @@
 from pydantic import BaseModel
 from pymongo.errors import DuplicateKeyError
 from queries.client import MongoQueries
+from bson.objectid import ObjectId
 
-
-class DuplicateAccountError(ValueError):
-    pass
-
-
-class AccountIn(BaseModel):
-    username: str
-    password: str
-    full_name: str
-
-
-class AccountOut(BaseModel):
-    id: str
-    username: str
-    full_name: str
-    password: str
-
-
-class AccountOutWithPassword(AccountOut):
-    password: str
+from models.auth import (
+    AccountOutWithPassword,
+    DuplicateAccountError,
+    AccountOut,
+    AccountIn,
+)
 
 
 class AccountQueries(MongoQueries):
     collection_name = "accounts"
 
     def get(self, username: str) -> AccountOutWithPassword:
-        props = self.collection.find_one({"username": username})
-        if not props:
+        account = self.collection.find_one({"username": username})
+        if not account:
             return None
-        props["id"] = str(props["_id"])
-        return AccountOut(**props)
+        account["id"] = str(account["_id"])
+        return AccountOut(**account)
 
     def create(self, info: AccountIn, password: str) -> AccountOutWithPassword:
-        props = info.dict()
-        props["password"] = password
-        try:
-            self.collection.insert_one(props)
-        except DuplicateKeyError:
+        account = info.dict()
+        if self.get(account["username"]):
             raise DuplicateAccountError()
-        props["id"] = str(props["_id"])
-        return AccountOut(**props)
+        account["hashed_password"] = password
+        result = self.collection.insert_one(account)
+        if result.inserted_id:
+            account["id"] = str(result.inserted_id)
+        return AccountOut(**account)
+
+    def delete(self, account_id: str):
+        results = self.collection.delete_one({"_id": ObjectId(account_id)})
+        return results.deleted_count > 0
