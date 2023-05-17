@@ -1,6 +1,16 @@
 from fastapi import APIRouter
 import requests
-from models.recommendations import RecommendationIn
+from models.recommendations import RecommendationIn, RecommendationSaveIn, RecommendationSaveOut
+from queries.recommendations import RecommendationQueries
+from fastapi import (
+    Depends,
+    HTTPException,
+    status,
+    Response,
+    APIRouter,
+    Request,
+)
+from authenticator import authenticator
 
 router = APIRouter()
 
@@ -22,5 +32,29 @@ async def post_recommendation(info: RecommendationIn):
             ]
         }
     )
-    recommendations = response.json()["choices"][0]["message"]["content"]
+    recommendations = response.json()["choices"][0]["message"]["content"].strip().split("\n")
     return {"recommendations": recommendations}
+
+@router.post("/recommendations/", tags=["Recommendations"])
+async def save_recommendation(
+    info: RecommendationSaveIn,
+    recommendation: RecommendationQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data)
+):
+    print(account_data)
+    return recommendation.create(info, account_id=account_data["id"])
+
+@router.get("/recommendations/")
+async def list_recommendation(
+    # request: Request,
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    recommendation: RecommendationQueries = Depends()
+):
+    return recommendation.get(account_data["username"])
+
+# @router.get("/recommendations_one/")
+# async def list_recommendation(
+#     # request: Request,
+#     recommendation: RecommendationQueries = Depends()
+# ):
+#     return recommendation.get_one()
