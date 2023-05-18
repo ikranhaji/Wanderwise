@@ -10,11 +10,12 @@ from models.recommendations import (
 class RecommendationQueries(MongoQueries):
     collection_name = "recommendations"
 
-    def get(self, username: str) -> RecommendationSaveOut:
+    def get(self, account_id: str) -> RecommendationSaveOut:
         recommendations = []
-        for recommendation in self.collection.find({"username": username}):
+        for recommendation in self.collection.find({"account_id": account_id}):
             recommendation["id"] = str(recommendation["_id"])
             recommendations.append(RecommendationSaveOut(**recommendation))
+        print("this is recommendations the list ==>>>", recommendations)
         return recommendations
 
     # def get_one(self) -> RecommendationSaveOut:
@@ -57,15 +58,15 @@ class RecommendationQueries(MongoQueries):
             recommendation["id"] = str(result.inserted_id)
         return RecommendationSaveOut(**recommendation)
 
-    def delete(self, recommendation_id: str):
-        results = self.collection.delete_one({"_id": ObjectId(recommendation_id)})
+    def delete(self, recommendation_id: str, account_id: str):
+        results = self.collection.delete_one({"_id": ObjectId(recommendation_id), "account_id": account_id})
         return results.deleted_count > 0
 
     def get_one(self, recommendation_id: str, account_id: str):
         recommendation_id = ObjectId(recommendation_id)
         result = self.collection.find_one(
             {"_id": recommendation_id,
-             "account_id" : account_id
+             "account_id": account_id
              }
         )
         if result is not None:
