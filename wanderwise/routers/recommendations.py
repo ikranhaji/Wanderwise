@@ -44,13 +44,14 @@ async def save_recommendation(
     print(account_data)
     return recommendation.create(info, account_id=account_data["id"])
 
+
 @router.get("/recommendations/")
 async def list_recommendation(
     # request: Request,
     account_data: dict = Depends(authenticator.get_current_account_data),
     recommendation: RecommendationQueries = Depends()
 ):
-    return recommendation.get(account_data["username"])
+    return recommendation.get(account_id=account_data["id"])
 
 # @router.get("/recommendations_one/")
 # async def list_recommendation(
@@ -66,4 +67,13 @@ async def detail_recommendation(
     account_data: dict = Depends(authenticator.get_current_account_data),
     recommendation: RecommendationQueries = Depends()
 ):
-    return recommendation.get_one(id, account_id = account_data["id"])
+    return recommendation.get_one(id, account_id=account_data["id"])
+
+
+@router.delete("/recommendations/{id}")
+async def delete_recommendation(
+    id: str,
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    recommendation: RecommendationQueries = Depends()
+                                ):
+    return {"successful deletion": recommendation.delete(id, account_id=account_data['id'])}
