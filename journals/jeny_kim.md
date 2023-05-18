@@ -1,0 +1,20 @@
+May 18th, 2023 - Thursday
+    Jeny was driving, worked as a group for additional input.
+    Jeny created recommendation details and authentication tokens.
+    Jason took charge in driving after, worked as a group for additional input.
+    Jason deleted recommendations.
+
+May 17th, 2023 - Wednesday
+    Gianni was driving, worked as a group for additional input.
+    Gianni saved and listed recommendations.
+
+May 16th, 2023 - Tuesday
+    Ikran started driving, finished authentication.
+    Paul took charge of driving, worked as a group for additional input.
+    Paul made post request to ChatGPT API
+    Paul made queries recommendation.
+
+
+May 15th, 2023 - Monday
+    Ikran was driving, worked as a group for additional input.
+    Started the backend: authentication

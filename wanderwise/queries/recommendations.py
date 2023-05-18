@@ -51,7 +51,7 @@ class RecommendationQueries(MongoQueries):
 
     def create(self, info: RecommendationSaveIn, account_id: str) -> RecommendationSaveOut:
         recommendation = info.dict()
-        recommendation["account_id"] = ObjectId(account_id)
+        recommendation["account_id"] = account_id
         result = self.collection.insert_one(recommendation)
         if result.inserted_id:
             recommendation["id"] = str(result.inserted_id)
@@ -60,3 +60,15 @@ class RecommendationQueries(MongoQueries):
     def delete(self, recommendation_id: str):
         results = self.collection.delete_one({"_id": ObjectId(recommendation_id)})
         return results.deleted_count > 0
+
+    def get_one(self, recommendation_id: str, account_id: str):
+        recommendation_id = ObjectId(recommendation_id)
+        result = self.collection.find_one(
+            {"_id": recommendation_id,
+             "account_id" : account_id
+             }
+        )
+        if result is not None:
+            result["id"] = str(result["_id"])
+            del result["_id"]
+        return result
