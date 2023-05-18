@@ -58,3 +58,12 @@ async def list_recommendation(
 #     recommendation: RecommendationQueries = Depends()
 # ):
 #     return recommendation.get_one()
+
+
+@router.get("/recommendations/{id}")
+async def detail_recommendation(
+    id: str,
+    account_data: dict = Depends(authenticator.get_current_account_data),
+    recommendation: RecommendationQueries = Depends()
+):
+    return recommendation.get_one(id, account_id = account_data["id"])
