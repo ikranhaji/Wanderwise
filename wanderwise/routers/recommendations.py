@@ -1,6 +1,8 @@
+from typing import List
 from fastapi import APIRouter
 import requests
 from models.recommendations import RecommendationIn, RecommendationSaveIn, RecommendationSaveOut
+from models.auth import DeleteStatus
 from queries.recommendations import RecommendationQueries
 from fastapi import (
     Depends,
@@ -14,15 +16,16 @@ from authenticator import authenticator
 
 router = APIRouter()
 
+
 @router.post("/recommendations", tags=["Recommendations"])
 async def post_recommendation(info: RecommendationIn):
     response = requests.post(
         "https://api.openai.com/v1/chat/completions",
-        headers = {
+        headers={
             "Content-type": "application/json",
             "Authorization": "Bearer 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"
         },
-        json = {
+        json={
                 "model": "gpt-3.5-turbo",
                 "messages": [
                     {
@@ -35,7 +38,8 @@ async def post_recommendation(info: RecommendationIn):
     recommendations = response.json()["choices"][0]["message"]["content"].strip().split("\n")
     return {"recommendations": recommendations}
 
-@router.post("/recommendations/", tags=["Recommendations"])
+
+@router.post("/recommendations/", tags=["Recommendations"], response_model=RecommendationSaveOut)
 async def save_recommendation(
     info: RecommendationSaveIn,
     recommendation: RecommendationQueries = Depends(),
@@ -45,7 +49,7 @@ async def save_recommendation(
     return recommendation.create(info, account_id=account_data["id"])
 
 
-@router.get("/recommendations/")
+@router.get("/recommendations/", tags=["Recommendations"], response_model=List[RecommendationSaveOut])
 async def list_recommendation(
     # request: Request,
     account_data: dict = Depends(authenticator.get_current_account_data),
@@ -61,7 +65,7 @@ async def list_recommendation(
 #     return recommendation.get_one()
 
 
-@router.get("/recommendations/{id}")
+@router.get("/recommendations/{id}", tags=["Recommendations"], response_model=RecommendationSaveOut)
 async def detail_recommendation(
     id: str,
     account_data: dict = Depends(authenticator.get_current_account_data),
@@ -70,10 +74,10 @@ async def detail_recommendation(
     return recommendation.get_one(id, account_id=account_data["id"])
 
 
-@router.delete("/recommendations/{id}")
+@router.delete("/recommendations/{id}", tags=["Recommendations"], response_model=DeleteStatus)
 async def delete_recommendation(
     id: str,
     account_data: dict = Depends(authenticator.get_current_account_data),
     recommendation: RecommendationQueries = Depends()
                                 ):
-    return {"successful deletion": recommendation.delete(id, account_id=account_data['id'])}
+    return {"success": recommendation.delete(id, account_id=account_data['id'])}

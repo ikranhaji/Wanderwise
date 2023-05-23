@@ -1,0 +1,113 @@
+.form-main {
+        box-shadow: 5px 10px 10px black;
+}
+
+.login-card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: white;
+    width: 350px;
+    height: 450px;
+
+    border: 2px solid black;
+    padding-bottom: 1.5em;
+}
+
+.top{
+    text-align: center;
+
+}
+
+
+
+
+.login-form {
+    border-top: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 55%;
+}
+
+.form-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+  background-image: radial-gradient( circle farthest-corner at 7.2% 13.6%,  rgba(37,249,245,1) 0%, rgba(8,70,218,1) 90% );
+}
+
+label {
+    text-align: left;
+    font-weight:bolder;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 85%;
+    height: 3rem;
+    padding: .5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    font-weight: bolder;
+}
+
+/* input::after::before{
+    border: 1.5px solid red;
+} */
+
+#login-btn {
+    height: 3.5rem;
+    width: 75%;
+    background-color: rgba(8,70,218,1);
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: bolder;
+    color: white;
+    transition: 0.5s;
+}
+
+#login-btn:hover {
+    background-color: rgba(37,249,245,1);
+     box-shadow: inset -3px -3px 50px 10px rgba(8,70,218,1);
+}
+
+
+.login-nav {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    top: 0;
+}
+
+.login-nav > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bolder;
+    background-color: rgba(8,70,218,1);
+    color:white;
+    width: 50%;
+    border-radius: 10px 0px 0px 0px;
+}
+
+.login-nav > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bolder;
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    width: 50%;
+    border-radius: 0px 10px 0px 0px ;
+
+}

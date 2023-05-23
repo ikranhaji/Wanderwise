@@ -34,3 +34,7 @@ class AccountToken(Token):
 
 class HttpError(BaseModel):
     detail: str
+
+
+class DeleteStatus(BaseModel):
+    success: bool
