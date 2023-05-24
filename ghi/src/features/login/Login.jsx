@@ -3,7 +3,7 @@ import { useLoginMutation, useGetTokenQuery } from '../../app/apiSlice';
 import React, { useState } from 'react';
 
 const Login = () => {
-	const {data: account} = useGetTokenQuery();
+	const {data:account} = useGetTokenQuery();
 	const [login, results] = useLoginMutation();
 	const [username, setUserName] = useState('');
 	const [password, setPassword] = useState('');

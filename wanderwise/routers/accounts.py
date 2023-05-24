@@ -16,7 +16,7 @@ from models.auth import (
     AccountForm,
     DuplicateAccountError,
     HttpError,
-    DeleteStatus
+    DeleteStatus,
 )
 from queries.accounts import AccountQueries
 
