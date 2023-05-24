@@ -89,6 +89,18 @@ export const Api = createApi({
 					body,
 				};
 			},
+		}),
+		getRecommendationList: builder.query({
+			query: () => ({
+				url: '/recommendations/',
+				credentials: 'include'
+			}),
+		}),
+		getRecommendationDetails: builder.query({
+			query: ({id}) => ({
+				url: `/recommendations/${id}`,
+				credentials: 'include'
+			}),
 		})
 	}),
 });
@@ -101,4 +113,6 @@ export const {
 	useDeleteAccountMutation,
 	useCreateRecommendationMutation,
 	useSaveRecommendationMutation,
+	useGetRecommendationListQuery,
+	useGetRecommendationDetailsQuery,
 } = Api;
