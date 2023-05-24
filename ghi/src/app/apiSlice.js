@@ -63,7 +63,33 @@ export const Api = createApi({
 			}),
 			invalidatesTags: ['Account'],
 		}),
-		
+		createRecommendation:builder.mutation({
+			query: ({interest, location}) => {
+			    const data = new FormData();
+				data.append('interest', interest);
+				data.append('location', location);
+				const body = {};
+				for (const [key, value] of data) {
+					body[key] = value;
+				}
+				return {
+					url: '/recommendations',
+					method: 'POST',
+					body,
+				};
+			},
+			transformResponse:(response) => response?.recommendations
+		}),
+		saveRecommendation:builder.mutation({
+			query: (body) => {
+				return {
+					url: '/recommendations/',
+					method: 'POST',
+					credentials: 'include',
+					body,
+				};
+			},
+		})
 	}),
 });
 
@@ -73,4 +99,6 @@ export const {
 	useLoginMutation,
 	useGetTokenQuery,
 	useDeleteAccountMutation,
+	useCreateRecommendationMutation,
+	useSaveRecommendationMutation,
 } = Api;
