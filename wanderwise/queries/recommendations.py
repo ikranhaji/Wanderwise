@@ -1,10 +1,7 @@
 from queries.client import MongoQueries
 from bson.objectid import ObjectId
 
-from models.recommendations import (
-    RecommendationSaveIn,
-    RecommendationSaveOut
-)
+from models.recommendations import RecommendationSaveIn, RecommendationSaveOut
 
 
 class RecommendationQueries(MongoQueries):
@@ -50,7 +47,9 @@ class RecommendationQueries(MongoQueries):
     #         doc["account_id"] = str(doc["account_id"])
     #         return  RecommendationSaveOut(**doc)
 
-    def create(self, info: RecommendationSaveIn, account_id: str) -> RecommendationSaveOut:
+    def create(
+        self, info: RecommendationSaveIn, account_id: str
+    ) -> RecommendationSaveOut:
         recommendation = info.dict()
         recommendation["account_id"] = account_id
         result = self.collection.insert_one(recommendation)
@@ -59,15 +58,15 @@ class RecommendationQueries(MongoQueries):
         return RecommendationSaveOut(**recommendation)
 
     def delete(self, recommendation_id: str, account_id: str):
-        results = self.collection.delete_one({"_id": ObjectId(recommendation_id), "account_id": account_id})
+        results = self.collection.delete_one(
+            {"_id": ObjectId(recommendation_id), "account_id": account_id}
+        )
         return results.deleted_count > 0
 
     def get_one(self, recommendation_id: str, account_id: str):
         recommendation_id = ObjectId(recommendation_id)
         result = self.collection.find_one(
-            {"_id": recommendation_id,
-             "account_id": account_id
-             }
+            {"_id": recommendation_id, "account_id": account_id}
         )
         if result is not None:
             result["id"] = str(result["_id"])
