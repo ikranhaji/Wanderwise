@@ -1,16 +1,24 @@
 import React, { useState }  from "react";
 import { useCreateRecommendationMutation } from "../../app/apiSlice";
 import RecommendationResults from "../../features/Recommendation/Recommendationresults"
+import loading from "./loading.gif"
 
 function RecommendationForm () {
     const [interest, setInterest] = useState('')
     const [location, setLocation] = useState('')
-    const [create, result] = useCreateRecommendationMutation()
+    const [create, result, isLoading] = useCreateRecommendationMutation()
     const handleSubmit =  async (e) => {
         e.preventDefault();
+
+		setInterest('');
+		setLocation('')
+
         console.log(await create({interest, location}))
 
+	;
     }
+	if (isLoading) return <img src={loading}/>
+
 return (
    <>
 		<div>

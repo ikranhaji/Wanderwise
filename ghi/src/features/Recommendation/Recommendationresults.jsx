@@ -12,8 +12,6 @@ function RecommendationResults(props) {
     }
 
 
-
-
     return (
 
         <>
