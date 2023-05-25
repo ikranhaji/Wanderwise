@@ -1,13 +1,20 @@
-import { useGetRecommendationDetailsQuery } from "../../app/apiSlice"
+import { useGetRecommendationDetailsQuery, useDeleteRecommendationDetailsMutation } from "../../app/apiSlice"
 import { useParams } from 'react-router-dom'
 
 function UserRecommendationDetails () {
+    const [ deleteRec, result ] = useDeleteRecommendationDetailsMutation()
+    const handleDelete = (e) => {
+		e.preventDefault();
+        deleteRec({id: itemId})
+    };
     const params = useParams()
     const itemId = params.itemId
     console.log(params)
     const { data, isLoading } = useGetRecommendationDetailsQuery({id: itemId});
     console.log(data);
     if (isLoading) return <div>Loading</div>
+
+
 
     return (
     <>
@@ -26,6 +33,7 @@ function UserRecommendationDetails () {
             </tr>
         </tbody>
     </table>
+    <button onClick={handleDelete}>Delete</button>
     </div>
     </>
     )
