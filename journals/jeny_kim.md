@@ -1,6 +1,8 @@
 May 25th, 2023 - Wednesday
     Paul started driving, finished listing the detail view.
     Jeny took chare of driving, worked on redirected the pages.
+    Jeny started the userprofile page to reflect full name and recommendations.
+
 
 May 24th, 2023 - Wednesday
     Ikran started driving, finishing saving recommendations to profile.
@@ -15,7 +17,7 @@ May 23rd, 2023 - Tuesday
 May 22nd, 2023 - Monday
     Jason was driving, worked as a group for additional input.
     Jason started the front-end auth.
-    
+
 May 18th, 2023 - Thursday
     Jeny was driving, worked as a group for additional input.
     Jeny created recommendation details and authentication tokens.

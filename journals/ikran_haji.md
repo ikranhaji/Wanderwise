@@ -1,6 +1,8 @@
 May 25th, 2023 - Wednesday
     Paul started driving, finished listing the detail view.
     Jeny took chare of driving, worked on redirected the pages.
+    Jeny started the userprofile page to reflect full name and recommendations.
+
 
 May 24th, 2023 - Wednesday
     Ikran started driving, finishing saving recommendations to profile.

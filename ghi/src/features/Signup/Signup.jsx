@@ -32,7 +32,7 @@ const Signup = () => {
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
 				/>
-				<label htmlFor="fullname">Full Name</label>
+				<label htmlFor="fullname">First Name & Last Name</label>
 				<input
 					name="fullname"
 					value={full_name}
