@@ -36,7 +36,7 @@ const Signup = () => {
 					value={full_name}
 					onChange={(e) => setFull_name(e.target.value)}
 				/>
-                <button type='submit'><Link to='/createrecommendations'>Submit</Link></button>
+                <button type='submit'>Submit</button>
 			</form>
 		</div>
 	);
