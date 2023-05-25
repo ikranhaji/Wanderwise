@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCreateAccountMutation, useGetTokenQuery } from '../../app/apiSlice';
 import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 const Signup = () => {
 	const [create, result] = useCreateAccountMutation();
@@ -35,7 +36,7 @@ const Signup = () => {
 					value={full_name}
 					onChange={(e) => setFull_name(e.target.value)}
 				/>
-                <button type='submit'>Submit</button>
+                <button type='submit'><Link to='/createrecommendations'>Submit</Link></button>
 			</form>
 		</div>
 	);
