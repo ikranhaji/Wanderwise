@@ -78,7 +78,8 @@ export const Api = createApi({
 					body,
 				};
 			},
-			transformResponse:(response) => response?.recommendations
+			transformResponse:(response) => response?.recommendations,
+			invalidatesTags: ['Recommendations'],
 		}),
 		saveRecommendation:builder.mutation({
 			query: (body) => {
@@ -89,6 +90,29 @@ export const Api = createApi({
 					body,
 				};
 			},
+			invalidatesTags: ['Recommendations'],
+		}),
+		getRecommendationList: builder.query({
+			query: () => ({
+				url: '/recommendations/',
+				credentials: 'include'
+			}),
+			providesTags: ['Recommendations'],
+		}),
+		getRecommendationDetails: builder.query({
+			query: ({id}) => ({
+				url: `/recommendations/${id}`,
+				credentials: 'include'
+			}),
+			providesTags: ['Recommendations'],
+		}),
+		deleteRecommendationDetails: builder.mutation({
+			query: ({ id }) => ({
+				url: `/recommendations/${id}`,
+				method: `DELETE`,
+				credentials: 'include',
+			}),
+			invalidatesTags: ['Recommendations'],
 		})
 	}),
 });
@@ -101,4 +125,7 @@ export const {
 	useDeleteAccountMutation,
 	useCreateRecommendationMutation,
 	useSaveRecommendationMutation,
+	useGetRecommendationListQuery,
+	useGetRecommendationDetailsQuery,
+	useDeleteRecommendationDetailsMutation,
 } = Api;

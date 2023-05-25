@@ -1,4 +1,5 @@
 import './Nav.css'
+import { NavLink } from 'react-router-dom'
 import { useLogoutMutation, useLoginMutation, useGetTokenQuery, useDeleteAccountMutation } from '../../app/apiSlice';
 
 export default function Nav() {
@@ -12,14 +13,14 @@ export default function Nav() {
 		}
 	return (
 		<div className="container blue circleBehind">
-			<a>HOME</a>
-			<a>RECOMMENDATIONS</a>
-			<a>ABOUT</a>
-			<a>CONTACT</a>
-			<a onClick={handleDelete}>delete Account</a>
-			{!account && <a>SIGNUP</a>}
-			{!account &&<a>LOGIN</a>}
-			{account && <a onClick={logout}>LOGOUT</a>}
+			<NavLink to='/'>HOME</NavLink>
+			<NavLink to='/createrecommendations'>RECOMMENDATIONS</NavLink>
+			<NavLink to='/myprofile'>Profile</NavLink>
+			<NavLink to='/recdetails/:itemId'>RecDetails</NavLink>
+			<NavLink to='/' onClick={handleDelete}>delete Account</NavLink>
+			{!account && <NavLink to='/auth/signup'>SIGNUP</NavLink>}
+			{!account &&<NavLink to='/auth/login'>LOGIN</NavLink>}
+			{account && <NavLink to='/' onClick={logout}>LOGOUT</NavLink>}
 		</div>
 	);
 }
