@@ -1,6 +1,7 @@
 import './Login.css';
 import { useLoginMutation, useGetTokenQuery } from '../../app/apiSlice';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 	const {data:account} = useGetTokenQuery();
@@ -8,9 +9,11 @@ const Login = () => {
 	const [username, setUserName] = useState('');
 	const [password, setPassword] = useState('');
 
+	const navigate = useNavigate();
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		login({ username, password });
+		navigate('/myprofile')
 	};
 	return (
 		<>

@@ -1,5 +1,5 @@
 import { useGetRecommendationDetailsQuery, useDeleteRecommendationDetailsMutation } from "../../app/apiSlice"
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 function UserRecommendationDetails () {
     const [ deleteRec, result ] = useDeleteRecommendationDetailsMutation()
@@ -33,7 +33,7 @@ function UserRecommendationDetails () {
             </tr>
         </tbody>
     </table>
-    <button onClick={handleDelete}>Delete</button>
+    <button onClick={handleDelete}><Link to='/myprofile'>Delete</Link></button>
     </div>
     </>
     )

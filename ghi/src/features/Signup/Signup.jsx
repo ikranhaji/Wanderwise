@@ -1,8 +1,10 @@
 import React from 'react';
 import { useCreateAccountMutation, useGetTokenQuery } from '../../app/apiSlice';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
+	const navigate = useNavigate();
 	const [create, result] = useCreateAccountMutation();
     const { data: account } = useGetTokenQuery();
 	const [username, setUsername] = useState('');
@@ -12,6 +14,7 @@ const Signup = () => {
 		e.preventDefault();
         create( { username, password, full_name } )
 		console.log("this is result===>",result);
+		navigate('/createrecommendations')
 	};
 	return (
 		<div>

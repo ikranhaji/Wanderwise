@@ -7,15 +7,15 @@ export const Api = createApi({
 	}),
 	endpoints: (builder) => ({
 		createAccount: builder.mutation({
-			query: ({ username, password, full_name }) => {
-				const nerd = new FormData();
-				nerd.append('username', username);
-				nerd.append('password', password);
-				nerd.append('full_name', full_name);
-				const body = {};
-				for (const [key, value] of nerd) {
-					body[key] = value;
-				}
+			query: (body) => {
+				// const nerd = new FormData();
+				// nerd.append('username', username);
+				// nerd.append('password', password);
+				// nerd.append('full_name', full_name);
+				// const body = {};
+				// // for (const [key, value] of nerd) {
+				// 	body[key] = value;
+				// }
 				return {
 					url: '/api/accounts',
 					method: 'POST',
@@ -23,7 +23,7 @@ export const Api = createApi({
 					credentials: 'include',
 				};
 			},
-			providesTags: ['Account'],
+			invalidatesTags: ['Account'],
 		}),
 		login: builder.mutation({
 			query: ({ username, password }) => {

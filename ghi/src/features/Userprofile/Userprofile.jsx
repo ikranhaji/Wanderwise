@@ -31,3 +31,13 @@ return (
 }
 
 export default Userprofile
+
+
+
+{/* <NavLink to='/' onClick={handleDelete}>delete Account</NavLink> */}
+
+// const handleDelete = (data) => {
+// 	console.log(account)
+// 	logout()
+// 	deleteAccount(data)
+// }
