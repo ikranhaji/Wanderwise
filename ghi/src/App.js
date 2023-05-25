@@ -13,7 +13,7 @@ import Login from './features/login/Login';
 import Signup from './features/Signup/Signup';
 import Recommendation from './features/Recommendation/Recommendation';
 import Userprofile from './features/Userprofile/Userprofile';
-// import UserRecommendationDetails from './features/Userprofile/UserRecommendationDetails'
+import UserRecommendationDetails from './features/Userprofile/UserRecommendationDetails'
 
 
 function App() {
@@ -21,12 +21,14 @@ function App() {
 		<BrowserRouter>
 			<Nav />
 			<Routes>
-				<Route path='/' element= {<Hero/>} />
-				<Route path='/login' element= {<Login/>} />
-				<Route path='/signup' element= {<Signup/>} />
-				<Route path='/createrecommendations' element= {<Recommendation/>} />
-				<Route path='/myprofile' element= {<Userprofile/>} />
-				{/* <UserRecommendationDetails /> */}
+				<Route path='/' element={<Hero/>} />
+				<Route path='auth'>
+					<Route path='login' element={<Login/>} />
+					<Route path='signup' element={<Signup/>} />
+				</Route>
+				<Route path='/createrecommendations' element={<Recommendation/>} />
+				<Route path='/myprofile' element={<Userprofile/>} />
+				<Route path='/recdetails/:itemId' element={<UserRecommendationDetails/>} />
 			</Routes>
 		</BrowserRouter>
 	);

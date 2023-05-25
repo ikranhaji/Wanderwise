@@ -1,4 +1,5 @@
 import { useGetRecommendationListQuery } from "../../app/apiSlice"
+import { Link } from "react-router-dom"
 
 function Userprofile () {
     const { data } = useGetRecommendationListQuery()
@@ -17,7 +18,7 @@ return (
                 {data?.map((item) => {
                     return (
                         <tr key={ item.id }>
-                            <td>{item.location}</td>
+                            <td><Link to={`/recdetails/${item.id}`}>{item.location}</Link></td>
                             <td>{item.id}</td>
                         </tr>
                     );
