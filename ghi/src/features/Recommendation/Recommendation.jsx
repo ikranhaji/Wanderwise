@@ -10,8 +10,8 @@ function RecommendationForm () {
     const handleSubmit =  async (e) => {
         e.preventDefault();
 
-		setInterest('');
-		setLocation('')
+		// setInterest('');
+		// setLocation('')
 
         console.log(await create({interest, location}))
 
