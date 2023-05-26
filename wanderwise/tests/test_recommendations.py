@@ -22,6 +22,15 @@ class FakeRecommendationsQuery():
     def get(self, account_id: str):
         return []
 
+    def get_one(self, recommendation_id: str, account_id: str):
+            return {
+            "location": "Minneapolis",
+            "interest": "food",
+            "recommendations": "blah blah",
+             "id": "21"
+            }
+
+
 def fake_get_current_account_data():
     return {"id":"124"}
 
@@ -70,3 +79,14 @@ def test_list_recommendation():
     #Assert
     assert response.status_code == 200
     assert data == []
+
+def test_detail_recommendation():
+    app.dependency_overrides[RecommendationQueries] = FakeRecommendationsQuery
+    app.dependency_overrides[authenticator.get_current_account_data] = fake_get_current_account_data
+
+
+    response = client.get('/recommendations/21')
+    data = response.json()
+
+    assert response.status_code == 200
+    assert data['id'] == "21"
