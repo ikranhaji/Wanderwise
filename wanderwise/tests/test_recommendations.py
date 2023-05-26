@@ -29,6 +29,8 @@ class FakeRecommendationsQuery():
             "recommendations": "blah blah",
              "id": "21"
             }
+    def delete(self, recommendation_id: str, account_id: str):
+        return True
 
 
 def fake_get_current_account_data():
@@ -90,3 +92,13 @@ def test_detail_recommendation():
 
     assert response.status_code == 200
     assert data['id'] == "21"
+
+def test_delete_recommendation():
+    app.dependency_overrides[RecommendationQueries] = FakeRecommendationsQuery
+    app.dependency_overrides[authenticator.get_current_account_data] = fake_get_current_account_data
+
+    response = client.delete('/recommendations/36')
+    data = response.json()
+
+    assert response.status_code == 200
+    assert data == {"success": True}
