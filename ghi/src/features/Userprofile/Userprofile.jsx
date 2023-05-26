@@ -10,7 +10,7 @@ return (
    <>
         <div>
         <h1>
-            {account.full_name}
+            {/* {account.full_name} */}
         </h1>
         <table>
             <thead>
