@@ -9,7 +9,9 @@ const Signup = () => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [confirmPassword, setConfirmPassword] = useState('');
-	const [full_name, setFull_name] = useState('');
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setlastName] = useState('');
+	const full_name = firstName + " " + lastName
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (password === confirmPassword) {
@@ -21,36 +23,75 @@ const Signup = () => {
 		}
 	};
 	return (
-		<div>
-			<form onSubmit={handleSubmit} className='login-form'>
-				<label htmlFor="username">User Name</label>
-				<input
-					name="username"
-					value={username}
-					onChange={(e) => setUsername(e.target.value)}
-				/>
-				<label htmlFor="fullname">First Name & Last Name</label>
-				<input
-					name="fullname"
-					value={full_name}
-					onChange={(e) => setFull_name(e.target.value)}
-				/>
-				<label htmlFor="password"> Password </label>
-				<input
-					type='password'
-					name="password"
-					value={password}
-					onChange={(e) => setPassword(e.target.value)}
-				/>
-				<label htmlFor="password"> Confirm Password </label>
-				<input
-					type='password'
-					name="confirm_password"
-					value={confirmPassword}
-					onChange={(e) => setConfirmPassword(e.target.value)}
-				/>
-				<button type='submit'>Submit</button>
-			</form>
+		<div className="container">
+			<div className="row">
+				<div className="col s12 m6 offset-m3">
+					<form onSubmit={handleSubmit}>
+						<div className="row">
+							<div className="input-field col s12">
+								<input
+									name="username"
+									placeholder='Username'
+									value={username}
+									onChange={(e) => setUsername(e.target.value)}
+									required
+								/>
+							</div>
+						</div>
+						<div className="row">
+							<div className="input-field col s6">
+								<input
+									name="firstName"
+									placeholder='First Name'
+									value={firstName}
+									onChange={(e) => setFirstName(e.target.value)}
+									required
+								/>
+							</div>
+							<div className="input-field col s6">
+								{/* <label htmlFor="lastName">Last Name</label> */}
+								<input
+									name="lastName"
+									placeholder='Last Name'
+									value={lastName}
+									onChange={(e) => setlastName(e.target.value)}
+									required
+								/>
+							</div>
+						</div>
+						<div className="row">
+							<div className="input-field col s6">
+								<input
+									type="password"
+									name="password"
+									placeholder='Password'
+									value={password}
+									onChange={(e) => setPassword(e.target.value)}
+									required
+								/>
+							</div>
+							<div className="input-field col s6">
+								<input
+									type="password"
+									name="confirm_password"
+									placeholder='Confirm Password'
+									value={confirmPassword}
+									onChange={(e) => setConfirmPassword(e.target.value)}
+									required
+								/>
+							</div>
+						</div>
+						<div className="row">
+							<div className="col s12">
+								<button className="btn waves-effect waves-light light-blue lighten-1" type="submit" name="action">
+									Submit
+									<i className="material-icons right">send</i>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	);
 };
