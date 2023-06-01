@@ -1,3 +1,17 @@
+June 1st, 2023 - Thursday
+    Jeny was driving, worked as a group for additional input.
+    Jeny worked on the css for the navbar.
+    Ikran took charge of driving, worked as a group...
+    Ikran added additional input for the css of the login/signup page.
+
+May 31st, 2023 - Wednesday
+    Paul was driving, worked as a group for additional input.
+    Paul worked on css for the hero page; the main home page.
+
+May 30th, 2023- Tuesday
+    Ikran was driving, worked as a group for additional input.
+    Ikran started the css portion for the signup/login page.
+    
 May 26th, 2023 - Friday
     Gianni was driving, worked as a group for additional input.
     Gianni fixed the profile page while refreshing.
@@ -8,7 +22,7 @@ May 25th, 2023 - Thursday
     Paul started driving, finished listing the detail view.
     Jeny took chare of driving, worked on redirected the pages.
     Jeny started the userprofile page to reflect full name and recommendations.
-    
+
 May 24th, 2023 - Wednesday
     Ikran started driving, finishing saving recommendations to profile.
     Paul took charge of driving, worked as a group for additional input.
