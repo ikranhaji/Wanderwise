@@ -15,7 +15,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      {showNav && <Nav />}
+      {/* {showNav && <Nav />} */}
+      <Nav/>
       <Routes>
         <Route path="/" element={<Hero funcNav={setShowNav} />} />
         <Route path="auth">

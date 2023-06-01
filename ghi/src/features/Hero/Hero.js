@@ -11,7 +11,7 @@ export default function Hero(props) {
       <div className="Maincontainer">
         <div className="Herocontainer">
           <img className="Hero" src={Heroimg} alt="WanderWise" />
-          <img className="logo" src={logo} alt="logo" />
+          {/* <img className="logo" src={logo} alt="logo" /> */}
           <div className="row position">
             <div className="col s12 m6">
               <div className="card blue-grey darken-1">
