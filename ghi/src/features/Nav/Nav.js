@@ -5,6 +5,7 @@ import {
   useGetTokenQuery,
   useDeleteAccountMutation,
 } from "../../app/apiSlice";
+import logo from "../Hero/logo.png";
 
 export default function Nav() {
   const [deleteAccount] = useDeleteAccountMutation();
@@ -12,19 +13,33 @@ export default function Nav() {
   const [logout] = useLogoutMutation();
 
   return (
-    <div className="container blue circleBehind">
-      <NavLink to="/">HOME</NavLink>
-      {account && (
-        <NavLink to="/createrecommendations">RECOMMENDATIONS</NavLink>
-      )}
-      {account && <NavLink to="/myprofile">Profile</NavLink>}
-      {!account && <NavLink to="/auth/signup">SIGNUP</NavLink>}
-      {!account && <NavLink to="/auth/login">LOGIN</NavLink>}
-      {account && (
-        <NavLink to="/" onClick={logout}>
-          LOGOUT
-        </NavLink>
-      )}
+    <div className="navbar-fixed">
+      <nav>
+        <div className="nav-wrapper">
+          <div id = "navyy" className="teal lighten-3">
+            <NavLink to="/">
+              <img id="logo" src={logo} alt="Wander Wise" />
+            </NavLink>
+            <ul id="nav-mobile" className="right hide-on-med-and-down">
+              <li>
+                {account && (
+                  <NavLink to="/createrecommendations">RECOMMENDATIONS</NavLink>
+                )}
+              </li>
+              <li>{account && <NavLink to="/myprofile">Profile</NavLink>}</li>
+              <li>{!account && <NavLink to="/auth/signup">SIGNUP</NavLink>}</li>
+              <li>{!account && <NavLink to="/auth/login">LOGIN</NavLink>}</li>
+              <li>
+                {account && (
+                  <NavLink to="/" onClick={logout}>
+                    LOGOUT
+                  </NavLink>
+                )}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 }
