@@ -10,14 +10,15 @@
 .Maincontainer {
   position: relative;
   min-height: 100vh;
-  min-width: 100vw;
+  width: 100vw;
 }
 
 .Herocontainer {
   height: fit-content;
   display: flex;
-  justify-content: center;
   align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .Hero-text {
@@ -50,5 +51,42 @@
 }
 
 .position {
-  margin-top: 10%;
+  width: 300px;
+
+}
+
+.about-us {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  color: white;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.about-us > h1 {
+    border-bottom: solid 10rem white;
+}
+.about-us > article {
+  width: 75%;
+  text-align: center;
+  margin: 2rem 0 8rem 0;
+}
+
+.contributors {
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  color: white;
+  overflow: auto;
+  width: 100%;
+}
+
+.my-card {
+  max-width: 250px;
+}
+
+#ikran, #jason, #jeny {
+  border-radius: 50%;
 }
