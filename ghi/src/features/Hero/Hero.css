@@ -44,10 +44,8 @@
 }
 
 .logo {
-  top: 0;
-  right: 0;
   position: absolute;
-  width: 40%;
+  width: 20%;
 }
 
 .position {

@@ -3,3 +3,9 @@
     height: 20%;
 
 }
+
+#navyy {
+    position: relative;
+    z-index: 2;
+    
+}
