@@ -2,6 +2,7 @@ import React from 'react';
 import { useCreateAccountMutation } from '../../app/apiSlice';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import "./Signup.css"
 
 const Signup = () => {
 	const navigate = useNavigate();
@@ -23,72 +24,57 @@ const Signup = () => {
 		}
 	};
 	return (
-		<div className="container">
-			<div className="row">
-				<div className="col s12 m6 offset-m3">
-					<form onSubmit={handleSubmit}>
+		<div className='sign-form'>
+			<div className="signup">
+				<div className="row">
+					<h2>Sign Up</h2>
+					<form onSubmit={handleSubmit} className="col s12">
 						<div className="row">
 							<div className="input-field col s12">
-								<input
-									name="username"
-									placeholder='Username'
+								<input id="username" type="text" class="validate"
 									value={username}
-									onChange={(e) => setUsername(e.target.value)}
-									required
-								/>
+									onChange={(e) => {
+										setUsername(e.target.value)
+									}}
+									placeholder='username' />
 							</div>
-						</div>
-						<div className="row">
 							<div className="input-field col s6">
-								<input
-									name="firstName"
-									placeholder='First Name'
+								<input id="first_name" type="text" class="validate"
 									value={firstName}
-									onChange={(e) => setFirstName(e.target.value)}
-									required
+									onChange={(e) => {
+										setFirstName(e.target.value)
+									}}
+									placeholder='first name'
 								/>
 							</div>
 							<div className="input-field col s6">
-								{/* <label htmlFor="lastName">Last Name</label> */}
-								<input
-									name="lastName"
-									placeholder='Last Name'
+								<input id="last_name" type="text" class="validate"
 									value={lastName}
-									onChange={(e) => setlastName(e.target.value)}
-									required
-								/>
+									onChange={(e) => {
+										setlastName(e.target.value)
+									}}
+									placeholder='last name' />
 							</div>
 						</div>
 						<div className="row">
-							<div className="input-field col s6">
-								<input
-									type="password"
-									name="password"
-									placeholder='Password'
+							<div className="input-field col s12">
+								<input id="password" type="password" class="validate"
 									value={password}
 									onChange={(e) => setPassword(e.target.value)}
-									required
-								/>
-							</div>
-							<div className="input-field col s6">
-								<input
-									type="password"
-									name="confirm_password"
-									placeholder='Confirm Password'
-									value={confirmPassword}
-									onChange={(e) => setConfirmPassword(e.target.value)}
-									required
-								/>
+									placeholder='Password' />
 							</div>
 						</div>
 						<div className="row">
-							<div className="col s12">
-								<button className="btn waves-effect waves-light light-blue lighten-1" type="submit" name="action">
-									Submit
-									<i className="material-icons right">send</i>
-								</button>
+							<div className="input-field col s12">
+								<input id="confirmpassword" type="password" class="validate"
+									value={confirmPassword}
+									onChange={(e) => setConfirmPassword(e.target.value)}
+									placeholder='Confirm Password' />
 							</div>
 						</div>
+						<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+							<i class="material-icons right">send</i>
+						</button>
 					</form>
 				</div>
 			</div>
