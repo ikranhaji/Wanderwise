@@ -15,7 +15,6 @@ export default function Nav() {
   return (
     <div className="navbar-fixed">
       <nav>
-        <div className="nav-wrapper">
           <div id = "navyy" className="teal lighten-3">
             <NavLink to="/">
               <img id="logo" src={logo} alt="Wander Wise" />
@@ -38,7 +37,6 @@ export default function Nav() {
               </li>
             </ul>
           </div>
-        </div>
       </nav>
     </div>
   );
