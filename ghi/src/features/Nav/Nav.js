@@ -19,7 +19,7 @@ export default function Nav() {
             <NavLink to="/">
               <img id="logo" src={logo} alt="Wander Wise" />
             </NavLink>
-            <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <ul id="nav-mobile" className="right">
               <li>
                 {account && (
                   <NavLink to="/createrecommendations">RECOMMENDATIONS</NavLink>
