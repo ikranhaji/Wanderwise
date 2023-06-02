@@ -10,10 +10,15 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login({ username, password });
-    navigate("/myprofile");
+    const response = await login({ username, password });
+    console.log(response)
+    if(response.error) {
+      alert('Invalid login credentials')
+    } else {
+      navigate("/myprofile");
+    }
   };
   return (
     <div className="login-form">
