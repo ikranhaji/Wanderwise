@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useCreateRecommendationMutation } from '../../app/apiSlice';
 import RecommendationResults from '../../features/Recommendation/Recommendationresults';
 import loading from './loading.gif';
+import './Recommendation.css'
+
 
 function RecommendationForm() {
 	const [interest, setInterest] = useState('');
@@ -17,23 +19,31 @@ function RecommendationForm() {
 
 	return (
 		<>
-			<div>
-				<form onSubmit={handleSubmit} className="recommendation-form">
-					<label htmlFor="interest">Interest</label>
+		<div className='recommendation-form'>
+			<div className='recommendation'>
+				<div className='row'>
+				<form onSubmit={handleSubmit} className="col s12">
 					<input
+						id="interest"
+						placeholder='Interest'
 						type="text"
 						name="interest"
 						value={interest}
 						onChange={(e) => setInterest(e.target.value)}
+						required
 					/>
-					<label htmlFor="location"> Location </label>
 					<input
+						placeholder='Location'
+						id="location"
 						type="text"
 						name="location"
 						value={location}
 						onChange={(e) => setLocation(e.target.value)}
+						required
 					/>
-					<button type="submit">Submit</button>
+					<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+							<i class="material-icons right">send</i>
+							</button>
 				</form>
 
 				{isLoading ? (
@@ -45,7 +55,9 @@ function RecommendationForm() {
 						interest={interest}
 					/>
 				)}
+				</div>
 			</div>
+		</div>
 		</>
 	);
 }

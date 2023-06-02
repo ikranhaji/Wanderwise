@@ -36,7 +36,8 @@ const Signup = () => {
 									onChange={(e) => {
 										setUsername(e.target.value)
 									}}
-									placeholder='username' />
+									placeholder='username'
+									required />
 							</div>
 							<div className="input-field col s6">
 								<input id="first_name" type="text" class="validate"
@@ -45,6 +46,7 @@ const Signup = () => {
 										setFirstName(e.target.value)
 									}}
 									placeholder='first name'
+									required
 								/>
 							</div>
 							<div className="input-field col s6">
@@ -53,7 +55,8 @@ const Signup = () => {
 									onChange={(e) => {
 										setlastName(e.target.value)
 									}}
-									placeholder='last name' />
+									placeholder='last name'
+									required />
 							</div>
 						</div>
 						<div className="row">
@@ -61,7 +64,8 @@ const Signup = () => {
 								<input id="password" type="password" class="validate"
 									value={password}
 									onChange={(e) => setPassword(e.target.value)}
-									placeholder='Password' />
+									placeholder='Password'
+									required />
 							</div>
 						</div>
 						<div className="row">
@@ -69,7 +73,8 @@ const Signup = () => {
 								<input id="confirmpassword" type="password" class="validate"
 									value={confirmPassword}
 									onChange={(e) => setConfirmPassword(e.target.value)}
-									placeholder='Confirm Password' />
+									placeholder='Confirm Password'
+									required />
 							</div>
 						</div>
 						<button class="btn waves-effect waves-light" type="submit" name="action">Submit
