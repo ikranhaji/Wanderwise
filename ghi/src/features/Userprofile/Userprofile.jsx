@@ -1,5 +1,7 @@
 import { useGetRecommendationListQuery, useGetTokenQuery } from "../../app/apiSlice"
 import { Link } from "react-router-dom"
+import vegas from './images/vegas.jpg';
+import "./Userprofile.css"
 
 function Userprofile () {
     const { data } = useGetRecommendationListQuery()
@@ -8,28 +10,26 @@ function Userprofile () {
 
 return (
    <>
-        <div>
-        <h1>
-            {/* {account.full_name} */}
-        </h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Locations</th>
-                    <th>Interests</th>
-                </tr>
-            </thead>
-            <tbody>
-                {data?.map((item) => {
+    <div className="recommendations">
+      {data?.map((item) => {
                     return (
-                        <tr key={ item.id }>
-                            <td><Link to={`/recdetails/${item.id}`}>{item.location}</Link></td>
-                            <td>{item.interest}</td>
-                        </tr>
-                    );
-                })}
-            </tbody>
-        </table>
+
+            <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                        <img id="pfp" src={vegas} />
+                        <span class="card-title">{item.location}</span>
+                    </div>
+                    <div class="card-content">
+                    <p>{item.interest}</p>
+                </div>
+                    <div class="card-action">
+                    <Link to={`/recdetails/${item.id}`}>Details</Link>
+                        </div>
+                    </div>
+                </div>
+                );
+            })}
         </div>
    </>
   )

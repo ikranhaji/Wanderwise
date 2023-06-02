@@ -1,6 +1,6 @@
 
 #pfp {
-    width: 150px;
+    width: 260px;
     height: 150px;
 }
 
@@ -10,4 +10,13 @@
     align-items: center;
     width: 100vw;
     height: 100%;
+}
+
+.recommendations {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  overflow: auto;
+  width: 100%;
 }
