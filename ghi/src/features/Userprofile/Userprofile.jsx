@@ -1,4 +1,4 @@
-import { useGetRecommendationListQuery, useGetTokenQuery } from "../../app/apiSlice"
+import { useGetRecommendationListQuery, useGetTokenQuery, useDeleteRecommendationDetailsMutation } from "../../app/apiSlice"
 import { Link } from "react-router-dom"
 import vegas from './images/vegas.jpg';
 import "./Userprofile.css"
@@ -7,11 +7,17 @@ function Userprofile () {
     const { data } = useGetRecommendationListQuery()
     const { data: account } = useGetTokenQuery()
     console.log(account)
+    const [ deleteRec, result ] = useDeleteRecommendationDetailsMutation()
+
 
 return (
    <>
     <div className="recommendations">
       {data?.map((item) => {
+        const handleDelete = (e) => {
+		e.preventDefault();
+        deleteRec({id: item.id})
+        }
                     return (
 
             <div class="col s12 m7">
@@ -25,6 +31,7 @@ return (
                 </div>
                     <div class="card-action">
                     <Link to={`/recdetails/${item.id}`}>Details</Link>
+                    <button onClick={handleDelete}>Delete</button>
                         </div>
                     </div>
                 </div>
