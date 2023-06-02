@@ -27,7 +27,7 @@ return (
                         <span class="card-title">{item.location}</span>
                     </div>
                     <div class="card-content">
-                    <p>{item.interest}</p>
+                    <p>{item.interest.charAt(0).toUpperCase() + item.interest.slice(1).toLowerCase()}</p>
                 </div>
                     <div class="card-action">
                     <Link to={`/recdetails/${item.id}`}>Details</Link>

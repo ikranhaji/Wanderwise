@@ -1,5 +1,7 @@
 import { useGetRecommendationDetailsQuery, useDeleteRecommendationDetailsMutation } from "../../app/apiSlice"
 import { useParams, Link } from 'react-router-dom'
+import './Userprofile.css'
+import vegas from './images/vegas.jpg';
 
 function UserRecommendationDetails () {
     const [ deleteRec, result ] = useDeleteRecommendationDetailsMutation()
@@ -18,23 +20,21 @@ function UserRecommendationDetails () {
 
     return (
     <>
-    <div>
-    <table>
-        <thead>
-            <tr>
-                <th>Interests</th>
-                <th>Recommendations</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr key={ data.location }>
-                <td>{data.interest}</td>
-                <td>{data.recommendations}</td>
-            </tr>
-        </tbody>
-    </table>
-    <button onClick={handleDelete}><Link to='/myprofile'>Delete</Link></button>
-    </div>
+    <div class="col s12 m7">
+                <div class="card">
+                    <div class="card-image">
+                        <img id="pfp" src={vegas} />
+                        <span class="card-title">{data.location}</span>
+                    </div>
+                    <div class="card-content">
+                    <p>{data.recommendations}</p>
+                </div>
+                    <div class="card-action">
+                        </div>
+                    </div>
+                </div>
+        <button onClick={handleDelete}><Link to='/myprofile'>Delete</Link></button>
+
     </>
     )
 }
