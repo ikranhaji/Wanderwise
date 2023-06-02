@@ -1,4 +1,5 @@
 import { useSaveRecommendationMutation } from "../../app/apiSlice";
+import './Recommendation.css'
 
 function RecommendationResults(props) {
     const[save] = useSaveRecommendationMutation()
@@ -15,6 +16,7 @@ function RecommendationResults(props) {
     return (
 
         <>
+        <div className="recomendation-text">
         <div>
             {props.data?.map((item, index) => {
                 return (
@@ -23,8 +25,15 @@ function RecommendationResults(props) {
                 );
             })}
         </div>
-        <div>
-            {props.data && props.data.length > 0 &&<button type="button" onClick={handleClick}>Save</button>}
+        <div className="save">
+            {props.data && props.data.length > 0 &&<button type="button" onClick={handleClick}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Save
+            </button>}
+        </div>
         </div>
         </>
     );
