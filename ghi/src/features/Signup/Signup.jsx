@@ -72,7 +72,7 @@ const Signup = () => {
 									placeholder='Confirm Password' />
 							</div>
 						</div>
-						<button class="btn waves-effect waves-light" type="submit" name="action">Submit
+						<button id='submit-btn' class="btn waves-effect waves-light" type="submit" name="action">Submit
 							<i class="material-icons right">send</i>
 						</button>
 					</form>

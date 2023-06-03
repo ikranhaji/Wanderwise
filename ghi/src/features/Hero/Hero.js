@@ -7,12 +7,16 @@ import ikran from './images/ikran.jpeg';
 import jeny from './images/jeny.jpeg';
 import jason from './images/jason.jpeg';
 import pfp from '../Userprofile/images/pfp.png';
+import tropicalVid from './tropical.mp4'
+import classes from './BackgroundVideo.module.css'
+
+
 export default function Hero(props) {
 	props.funcNav(false);
 	return (
 		<>
 			<div className="Maincontainer">
-				<div className="Herocontainer">
+				{/* <div className="Herocontainer">
 					<img className="Hero" src={Heroimg} alt="WanderWise" />
 					<div className="position">
 						<div className="col s12 m6">
@@ -42,8 +46,10 @@ export default function Hero(props) {
 						</div>
 					</div>
 					<Link to="/#aboutus"> Button </Link>
-				</div>
-			</div>
+				</div> */}
+
+
+		</div>
 
 			<div className="about-us">
 				<article id="aboutus">
