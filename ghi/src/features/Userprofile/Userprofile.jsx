@@ -1,9 +1,11 @@
 import { useGetRecommendationListQuery, useGetTokenQuery, useDeleteRecommendationDetailsMutation } from "../../app/apiSlice"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import vegas from './images/vegas.jpg';
 import "./Userprofile.css"
 
+
 function Userprofile () {
+    const navigate = useNavigate()
     const { data } = useGetRecommendationListQuery()
     const { data: account } = useGetTokenQuery()
     console.log(account)
@@ -19,23 +21,48 @@ return (
         deleteRec({id: item.id})
         }
                     return (
-
-            <div class="col s12 m7">
-                <div class="card">
-                    <div class="card-image">
-                        <img id="pfp" src={vegas} />
-                        <span class="card-title">{item.location}</span>
-                    </div>
-                    <div class="card-content">
-                    <p>{item.interest.charAt(0).toUpperCase() + item.interest.slice(1).toLowerCase()}</p>
-                </div>
-                    <div class="card-action">
-                    <Link to={`/recdetails/${item.id}`}>Details</Link>
-                    <button onClick={handleDelete}>Delete</button>
-                        </div>
-                    </div>
-                </div>
-                );
+											<div className="col s12 m7">
+												<div className="card">
+													<div>
+														<img id="pfp" src={vegas} />
+														<span className="card-title">{item.location}</span>
+													</div>
+													<div className="card-content">
+														<p>
+															{item.interest.charAt(0).toUpperCase() +
+																item.interest.slice(1).toLowerCase()}
+														</p>
+													</div>
+													<div id="button-space">
+														<button
+                                                        id='details-btn'
+															onClick={(e) => {
+																navigate(`/recdetails/${item.id}`);
+															}}
+															className="btn waves-effect waves-light"
+															type="submit"
+															name="action"
+														>
+															Details
+															<i className="material-icons right">details</i>
+														</button>
+														{/*
+														<Link to={`/recdetails/${item.id}`}>Details</Link> */}
+														<button
+															onclick={handleDelete}
+															className="btn waves-effect red lighten-1"
+															type="submit"
+															name="action"
+														>
+															Delete
+															<i className="material-icons right">
+																delete_forever
+															</i>
+														</button>
+													</div>
+												</div>
+											</div>
+										);
             })}
         </div>
    </>

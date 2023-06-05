@@ -7,11 +7,16 @@ import ikran from './images/ikran.jpeg';
 import jeny from './images/jeny.jpeg';
 import jason from './images/jason.jpeg';
 import pfp from '../Userprofile/images/pfp.png';
+import suitcase from './images/suitcase.png'
+import tropicalVid from './tropical.mp4'
+// import classes from './BackgroundVideo.module.css'
+
+
 export default function Hero(props) {
 	props.funcNav(false);
 	return (
 		<>
-			<div className="Maincontainer">
+			{/* <div className="Maincontainer">
 				<div className="Herocontainer">
 					<img className="Hero" src={Heroimg} alt="WanderWise" />
 					<div className="position">
@@ -41,11 +46,10 @@ export default function Hero(props) {
 							</div>
 						</div>
 					</div>
-					<Link to="/#aboutus"> Button </Link>
-				</div>
-			</div>
+				</div> */}
 
 			<div className="about-us">
+
 				<article id="aboutus">
 					<h1>About Us</h1>
 					<p>
@@ -71,14 +75,14 @@ export default function Hero(props) {
 						true. Start your adventure today and embrace the wonders of the
 						world with WonderWise as your AI-powered travel advisor.
 					</p>
+					<Link to={'/auth/signup'} className="Sign-up">
+						<button className="waves-effect waves-light btn">Sign Up</button>
+					</Link>
 				</article>
-				<Link to={'/auth/signup'} className="Sign-up">
-					<button className="waves-effect waves-light btn">Sign Up</button>
-				</Link>
 			</div>
 
 			<div className="contributors">
-				<div className="my-card card">
+				<div className="front-card card">
 					<div className="card-image waves-effect waves-block waves-light">
 						<img id="ikran" className="activator" src={ikran} />
 					</div>
@@ -106,7 +110,7 @@ export default function Hero(props) {
 						<Link to="https://gitlab.com/ikranhaji">git hub</Link>
 					</div>
 				</div>
-				<div className="my-card card">
+				<div className="front-card card">
 					<div className="card-image waves-effect waves-block waves-light">
 						<img id="jeny" className="activator" src={jeny} />
 					</div>
@@ -133,7 +137,7 @@ export default function Hero(props) {
 					</div>
 				</div>
 
-				<div className="my-card card">
+				<div className="front-card card">
 					<div className="card-image waves-effect waves-block waves-light">
 						<img className="activator" src={pfp} />
 					</div>
@@ -159,7 +163,7 @@ export default function Hero(props) {
 						<Link to="https://gitlab.com/gianniyonnithi">git hub</Link>
 					</div>
 				</div>
-				<div className="my-card card">
+				<div className="front-card card">
 					<div className="card-image waves-effect waves-block waves-light">
 						<img className="activator" src={pfp} />
 					</div>
@@ -185,7 +189,7 @@ export default function Hero(props) {
 						<Link to="https://gitlab.com/baumajam">git hub</Link>
 					</div>
 				</div>
-				<div className="my-card card">
+				<div className="front-card card">
 					<div className="card-image waves-effect waves-block waves-light">
 						<img id="jason" className="activator" src={jason} />
 					</div>

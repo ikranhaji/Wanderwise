@@ -13,7 +13,6 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await login({ username, password });
-    console.log(response)
     if(response.error) {
       alert('Invalid login credentials')
     } else {

@@ -1,11 +1,12 @@
 .login-form {
-    height: 100%;
-    background: linear-gradient(#141e30, #243b55);
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 8rem;
-
+    text-align: center;
+    height: 100vh;
+    background-image: url("background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .login-box {
@@ -188,8 +189,4 @@
     outline: none;
     background: transparent;
     font-weight: bold;
-}
-
-body {
-    background-image: url("background.jpg");
 }
