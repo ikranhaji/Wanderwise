@@ -1,55 +1,39 @@
 import './Hero.css';
-import Heroimg from './Heroimg.jpg';
-import HeroBtn from './HeroBtn/HeroBtn';
-import logo from './logo.png';
+
 import { Link } from 'react-router-dom';
 import ikran from './images/ikran.jpeg';
 import jeny from './images/jeny.jpeg';
 import jason from './images/jason.jpeg';
 import pfp from '../Userprofile/images/pfp.png';
-import suitcase from './images/suitcase.png'
-import tropicalVid from './tropical.mp4'
-// import classes from './BackgroundVideo.module.css'
+import tropicalVid from './images/tropical-vid.mp4'
 
 
 export default function Hero(props) {
 	props.funcNav(false);
 	return (
 		<>
-			{/* <div className="Maincontainer">
-				<div className="Herocontainer">
-					<img className="Hero" src={Heroimg} alt="WanderWise" />
-					<div className="position">
-						<div className="col s12 m6">
-							<div className="card blue-grey darken-1">
-								<div className="card-content white-text">
-									<span className="card-title">WanderWise</span>
-									<p>
-										Where all your travel needs and recommendations are at the
-										click of Link button. Plan your next trip with us!
-									</p>
-								</div>
-								<div className="row">
-									<div className="card-action">
-										<Link to={'/auth/signup'} className="Sign-up">
-											<button className="waves-effect waves-light btn">
-												Sign Up
-											</button>
-										</Link>
-										<Link to={'/auth/login'} className="Login">
-											<button className="waves-effect waves-light btn">
-												Login
-											</button>
-										</Link>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			<div className="video-slider">
+				<video muted autoPlay loop>
+					<source src={tropicalVid} type="video/mp4" />
+				</video>
+				<div className="slider-container">
+					<h1>WonderWise</h1>
+					<p className="desc">Lorem Ipsum</p>
+					<button
+						className="btn waves-effect waves-light"
+						type="submit"
+						name="action"
+					>
+						Sign-up
+						<i className="material-icons right">send</i>
+					</button>
+					{/* <div className='cta'>
+						Contact us
 				</div> */}
+				</div>
+			</div>
 
 			<div className="about-us">
-
 				<article id="aboutus">
 					<h1>About Us</h1>
 					<p>
