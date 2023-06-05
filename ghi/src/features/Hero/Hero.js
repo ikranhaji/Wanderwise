@@ -7,6 +7,7 @@ import ikran from './images/ikran.jpeg';
 import jeny from './images/jeny.jpeg';
 import jason from './images/jason.jpeg';
 import pfp from '../Userprofile/images/pfp.png';
+import suitcase from './images/suitcase.png'
 import tropicalVid from './tropical.mp4'
 // import classes from './BackgroundVideo.module.css'
 
@@ -15,7 +16,7 @@ export default function Hero(props) {
 	props.funcNav(false);
 	return (
 		<>
-			<div className="Maincontainer">
+			{/* <div className="Maincontainer">
 				<div className="Herocontainer">
 					<img className="Hero" src={Heroimg} alt="WanderWise" />
 					<div className="position">
@@ -45,15 +46,10 @@ export default function Hero(props) {
 							</div>
 						</div>
 					</div>
-				</div>
-
-
-		</div>
+				</div> */}
 
 			<div className="about-us">
-				<div className='right-container'>
 
-				</div>
 				<article id="aboutus">
 					<h1>About Us</h1>
 					<p>
@@ -79,9 +75,9 @@ export default function Hero(props) {
 						true. Start your adventure today and embrace the wonders of the
 						world with WonderWise as your AI-powered travel advisor.
 					</p>
-				<Link to={'/auth/signup'} className="Sign-up">
-					<button className="waves-effect waves-light btn">Sign Up</button>
-				</Link>
+					<Link to={'/auth/signup'} className="Sign-up">
+						<button className="waves-effect waves-light btn">Sign Up</button>
+					</Link>
 				</article>
 			</div>
 
