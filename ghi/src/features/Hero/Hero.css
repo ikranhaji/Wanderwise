@@ -56,10 +56,11 @@
 .about-us {
   background-color: black;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   color: white;
   max-height: 500px;
-  overflow: auto;
+
 }
 
 .about-us > h1 {
@@ -79,9 +80,10 @@
   color: white;
   overflow: auto;
   width: 100%;
+  padding: 30px;
 }
 
-.my-card {
+.front-card {
   max-width: 250px;
 }
 

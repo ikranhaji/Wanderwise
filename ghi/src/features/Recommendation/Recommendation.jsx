@@ -41,13 +41,13 @@ function RecommendationForm() {
 						onChange={(e) => setLocation(e.target.value)}
 						required
 					/>
-					<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-							<i class="material-icons right">send</i>
+					<button className="btn waves-effect waves-light" type="submit" name="action">Submit
+							<i className="material-icons right">send</i>
 							</button>
 				</form>
 
 				{isLoading ? (
-					<img src={loading} />
+					<img id='spinner' src={loading} />
 				) : (
 					<RecommendationResults
 						data={result.data}
