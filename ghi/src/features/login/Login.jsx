@@ -1,11 +1,10 @@
 import './Login.css';
-import { useLoginMutation, useGetTokenQuery } from "../../app/apiSlice";
+import { useLoginMutation } from "../../app/apiSlice";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { data: account } = useGetTokenQuery();
-  const [login, results] = useLoginMutation();
+  const [login] = useLoginMutation();
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [formError, setFormError] = useState({
@@ -32,10 +31,10 @@ const Login = () => {
   };
   return (
     <div className="login-form">
-      <div class="login-box">
+      <div className="login-box">
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
-          <div class="user-box">
+          <div className="user-box">
             <input id="u" type="text" name="" required
               value={username}
               onChange={(e) => {
@@ -45,7 +44,7 @@ const Login = () => {
             />
 
           </div>
-          <div class="user-box" >
+          <div className="user-box" >
             <input id="p" type="password" name="" required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
