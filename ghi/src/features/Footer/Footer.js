@@ -22,18 +22,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link className="grey-text text-lighten-3" to="#!">
-                  Link 2
-                </Link>
-              </li>
-              <li>
-                <Link className="grey-text text-lighten-3" to="#!">
-                  Link 3
-                </Link>
-              </li>
-              <li>
-                <Link className="grey-text text-lighten-3" to="#!">
-                  Link 4
+                <Link
+                  className="grey-text text-lighten-3"
+                  to="https://www.hotels.com/"
+                >
+                  Accomodations
                 </Link>
               </li>
             </ul>
