@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { Switch, Route, Link, BrowserRouter, Routes } from "react-router-dom";
 
+import Footer from "./features/Footer/Footer";
 import Nav from "./features/Nav/Nav";
 import Hero from "./features/Hero/Hero";
 import Login from "./features/login/Login";
@@ -16,8 +17,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      {/* {showNav && <Nav />} */}
-      <Nav/>
+      <Nav />
       <Routes>
         <Route path="/" element={<Hero funcNav={setShowNav} />} />
         <Route path="auth">
@@ -32,6 +32,7 @@ function App() {
           element={<UserRecommendationDetails />}
         />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

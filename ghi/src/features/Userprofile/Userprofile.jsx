@@ -1,9 +1,5 @@
-import {
-	useGetRecommendationListQuery,
-	useGetTokenQuery,
-	useDeleteRecommendationDetailsMutation,
-} from '../../app/apiSlice';
-import { Link, useNavigate } from 'react-router-dom';
+import { useGetRecommendationListQuery, useDeleteRecommendationDetailsMutation, useGetTokenQuery } from "../../app/apiSlice"
+import { useNavigate } from "react-router-dom"
 import vegas from './images/vegas.jpg';
 import './Userprofile.css';
 import pfp from './images/pfp.png'
@@ -12,8 +8,7 @@ function Userprofile() {
 	const navigate = useNavigate();
 	const { data } = useGetRecommendationListQuery();
 	const { data: account} = useGetTokenQuery();
-	const [deleteRec, result] = useDeleteRecommendationDetailsMutation();
-
+	const [deleteRec] = useDeleteRecommendationDetailsMutation();
 	return (
 		<>
 			<div className="rec-background">
@@ -52,41 +47,32 @@ function Userprofile() {
 												className="btn waves-effect waves-light"
 												type="submit"
 												name="action"
-											>
+												>
 												Details
 												<i className="material-icons right">details</i>
 											</button>
-											{/*
-														<Link to={`/recdetails/${item.id}`}>Details</Link> */}
 											<button
-												onclick={handleDelete}
+												onClick={handleDelete}
 												className="btn waves-effect red lighten-1"
 												type="submit"
 												name="action"
-											>
+												>
 												Delete
 												<i className="material-icons right">delete_forever</i>
 											</button>
+
 										</div>
 									</div>
 								</div>
-							);
-						})}
+						);
+					})}
+					</div>
 					</div>
 				</div>
-			</div>
+
+
 		</>
 	);
 }
 
 export default Userprofile;
-
-{
-	/* <NavLink to='/' onClick={handleDelete}>delete Account</NavLink> */
-}
-
-// const handleDelete = (data) => {
-// 	console.log(account)
-// 	logout()
-// 	deleteAccount(data)
-// }

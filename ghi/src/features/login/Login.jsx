@@ -1,20 +1,30 @@
 import './Login.css';
-import { useLoginMutation, useGetTokenQuery } from "../../app/apiSlice";
+import { useLoginMutation } from "../../app/apiSlice";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { data: account } = useGetTokenQuery();
-  const [login, results] = useLoginMutation();
+  const [login] = useLoginMutation();
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [formError, setFormError] = useState({
+    username: "",
+    password: "",
+
+  });
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let inputError = {
+      username: "",
+      password: "",
+
+    };
     const response = await login({ username, password });
-    if(response.error) {
-      alert('Invalid login credentials')
+    if (response.error) {
+      inputError.username = 'Account does not exist';
+      setFormError(inputError);
     } else {
       navigate("/myprofile");
     }
