@@ -8,13 +8,24 @@ const Login = () => {
   const [login, results] = useLoginMutation();
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [formError, setFormError] = useState({
+    username: "",
+    password: "",
+
+  });
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
+    let inputError = {
+      username: "",
+      password: "",
+
+    };
     const response = await login({ username, password });
-    if(response.error) {
-      alert('Invalid login credentials')
+    if (response.error) {
+      inputError.username = 'Account does not exist';
+      setFormError(inputError);
     } else {
       navigate("/myprofile");
     }
@@ -40,7 +51,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               placeholder='Password'
             />
-
+            <p id="u-exists" className="error-message">{formError.username}</p>
           </div>
 
           <button type="submit">
