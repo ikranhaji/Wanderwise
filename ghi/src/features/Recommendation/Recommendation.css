@@ -1,59 +1,57 @@
 .recommendation {
-    height: fit-content;
-    width: clamp(400px, 90%, 720px);
-    padding: 20px;
-    margin-top: 50px;
-    background-color: rgba(0, 0, 0, .5);
-    border-radius: 20px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+  height: fit-content;
+  width: clamp(400px, 90%, 720px);
+  padding: 20px;
+  margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
 }
 
 .recommendation-form {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
 }
 
 #interest,
 #location {
-    font-size: 20px;
-    color: white;
-    font-weight: bold;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
 }
 
 .recomendation-text {
-    color: white;
-    font-weight: bold;
+  color: white;
+  font-weight: bold;
 }
 
 .save form {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    color: #03e9f4;
-    font-size: 16px;
-    text-decoration: none;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: .5s;
-    margin-top: 40px;
-    letter-spacing: 4px
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #03e9f4;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
 }
 
 .save button:hover {
-    background: #03e9f4;
-    color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4,
-        0 0 25px #03e9f4,
-        0 0 50px #03e9f4,
-        0 0 100px #03e9f4;
+  background: #03e9f4;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 100px #03e9f4;
 }
 
 .save button span {
-    position: absolute;
-    display: block;
+  position: absolute;
+  display: block;
 }
 
 /* .save button span:nth-child(1) {
@@ -67,11 +65,9 @@
 
  */
 
-
-
- #spinner {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    margin-top: 3.5rem;
- }
+#spinner {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin-top: 3.5rem;
+}
