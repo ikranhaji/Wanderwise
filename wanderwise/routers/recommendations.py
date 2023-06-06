@@ -13,8 +13,11 @@ from fastapi import (
     Request,
 )
 from authenticator import authenticator
+import os
 
 router = APIRouter()
+
+KEY= os.environ["API_KEY"]
 
 
 @router.post("/recommendations", tags=["Recommendations"])
@@ -23,7 +26,7 @@ async def post_recommendation(info: RecommendationIn):
         "https://api.openai.com/v1/chat/completions",
         headers={
             "Content-type": "application/json",
-            "Authorization": "Bearer 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"
+            "Authorization": f"Bearer {KEY}"
         },
         json={
                 "model": "gpt-3.5-turbo",
