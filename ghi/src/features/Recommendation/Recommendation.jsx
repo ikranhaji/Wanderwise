@@ -41,9 +41,11 @@ function RecommendationForm() {
 						onChange={(e) => setLocation(e.target.value)}
 						required
 					/>
+					<div className='center'>
 					<button className="btn waves-effect waves-light" type="submit" name="action">Submit
 							<i className="material-icons right">send</i>
 							</button>
+							</div>
 				</form>
 
 				{isLoading ? (

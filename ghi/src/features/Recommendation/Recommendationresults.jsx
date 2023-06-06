@@ -17,11 +17,12 @@ function RecommendationResults(props) {
 				<div className="recomendation-text">
 					<div>
 						{props.data?.map((item, index) => {
-							return <p key={index}>{item}</p>;
+							return <p id='result-text' key={index}>{item}</p>;
 						})}
 					</div>
 					<div className="save">
 						{props.data && props.data.length > 0 && (
+							<div className='center'>
 							<button
 								onClick={handleClick}
 								class="btn waves-effect waves-light"
@@ -31,6 +32,7 @@ function RecommendationResults(props) {
 								Save
 								<i class="material-icons right">add_circle_outline</i>
 							</button>
+							</div>
 						)}
 					</div>{' '}
 				</div>

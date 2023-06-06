@@ -24,8 +24,10 @@
 }
 
 .recomendation-text {
+	margin: 10px 0;
 	color: white;
 	font-weight: bold;
+	text-align: left;
 }
 
 .save form {
@@ -71,4 +73,11 @@
 	height: 300px;
 	border-radius: 50%;
 	margin-top: 3.5rem;
+}
+.center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 20px 0;
 }

@@ -10,8 +10,9 @@ import './Userprofile.css';
 function Userprofile() {
 	const navigate = useNavigate();
 	const { data } = useGetRecommendationListQuery();
-	const { data: account } = useGetTokenQuery();
+	const { data: account} = useGetTokenQuery();
 	const [deleteRec, result] = useDeleteRecommendationDetailsMutation();
+	console.log(account)
 
 	return (
 		<>
