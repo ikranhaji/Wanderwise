@@ -16,6 +16,7 @@ const Signup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const response = await create({ username, password, full_name });
+
 		if (response.error) {
 			alert('Username already exists')
 		} else if (password !== confirmPassword) {

@@ -1,15 +1,17 @@
 import './Hero.css';
-
-import { Link } from 'react-router-dom';
+import logo from './logo.png'
+import { Link, useNavigate } from 'react-router-dom';
 import ikran from './images/ikran.jpeg';
 import jeny from './images/jeny.jpeg';
 import jason from './images/jason.jpeg';
 import pfp from '../Userprofile/images/pfp.png';
 import tropicalVid from './images/tropical-vid.mp4'
+import friends from './images/Traveling-friends.png'
 
 
 export default function Hero(props) {
 	props.funcNav(false);
+	const navigate = useNavigate()
 	return (
 		<>
 			<div className="video-slider">
@@ -17,16 +19,35 @@ export default function Hero(props) {
 					<source src={tropicalVid} type="video/mp4" />
 				</video>
 				<div className="slider-container">
-					<h1>WonderWise</h1>
-					<p className="desc">Lorem Ipsum</p>
-					<button
-						className="btn waves-effect waves-light"
-						type="submit"
-						name="action"
-					>
-						Sign-up
-						<i className="material-icons right">send</i>
-					</button>
+					<img id="hero-logo" src={logo} />
+					<div className="desc">
+						<p className="rotated-text">My Traveling AI Companion</p>
+					</div>
+
+					<div className="button-box">
+						<button
+							onClick={(e) => {
+								navigate(`/auth/login`);
+							}}
+							className="btn waves-effect amber darken-3"
+							type="submit"
+							name="action"
+						>
+							Login
+							<i className="material-icons right">mood</i>
+						</button>
+						<button
+							onClick={(e) => {
+								navigate(`/auth/signup`);
+							}}
+							className="btn waves-effect pink darken-1"
+							type="submit"
+							name="action"
+						>
+							Sign-up
+							<i className="material-icons right">play_circle_filled</i>
+						</button>
+					</div>
 					{/* <div className='cta'>
 						Contact us
 				</div> */}
@@ -34,34 +55,30 @@ export default function Hero(props) {
 			</div>
 
 			<div className="about-us">
-				<article id="aboutus">
+				<div className="about-image">
+					<img id="friends" src={friends} />
+				</div>
+				<article id="about-text">
 					<h1>About Us</h1>
 					<p>
-						Welcome to WonderWise, the app that revolutionizes your travel
-						experience. Powered by AI, we provide personalized travel
-						suggestions, prioritize your safety, offer culinary delights,
-						recommend hobbies, and unlock global adventures. With WonderWise as
-						your trusted companion, every journey becomes extraordinary. Trust
-						us to guide you towards unforgettable experiences, making your
-						travels seamless, exciting, and tailored to your preferences.
+						Experience extraordinary travels with WonderWise, the app that
+						revolutionizes your journey. Let our AI-powered technology
+						personalize your travel suggestions, prioritize your safety, offer
+						culinary delights, recommend hobbies, and unlock global adventures.
+						From iconic cities to stunning beaches, WonderWise curates tailored
+						recommendations to suit your tastes and interests. Embrace the
+						wonders of the world and start your extraordinary adventure today
+						with WonderWise as your trusted companion.
 					</p>
-					<br />
-					<p>
-						WonderWise is more than just Link travel advisor; it's Link gateway
-						to Link world of wonder and discovery. Our AI algorithms ensure your
-						safety by analyzing real-time data from trusted sources, providing
-						you with up-to-date and accurate information for every destination
-						on your itinerary. From culinary delights to thrilling hobbies,
-						WonderWise curates personalized recommendations to suit your tastes
-						and interests. Explore iconic cities, relax on stunning beaches, and
-						immerse yourself in diverse cultures around the globe. Let
-						WonderWise inspire you, guide you, and make your travel dreams come
-						true. Start your adventure today and embrace the wonders of the
-						world with WonderWise as your AI-powered travel advisor.
-					</p>
-					<Link to={'/auth/signup'} className="Sign-up">
-						<button className="waves-effect waves-light btn">Sign Up</button>
-					</Link>
+
+					<button
+						onClick={(e) => {
+							navigate('/auth/signup');
+						}}
+						className="waves-effect  light-green accent-4 btn"
+					>
+						Sign Up
+					</button>
 				</article>
 			</div>
 

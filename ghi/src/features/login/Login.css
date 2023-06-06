@@ -4,9 +4,10 @@
     align-items: center;
     text-align: center;
     height: 100vh;
-    background-image: url("background.jpg");
+    background-color: #99BE1B;
+    /* background-image: url("background.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100%; */
 }
 
 .login-box {
@@ -65,7 +66,7 @@
     font-size: 12px;
 }
 
-.login-box form button {
+/* .login-box form button {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -94,16 +95,16 @@
     display: block;
 }
 
-.login-box button span:nth-child(1) {
+/* .login-box button span:nth-child(1) {
     top: 0;
     left: -100%;
     width: 100%;
     height: 2px;
     background: linear-gradient(90deg, transparent, #03f4d8);
     animation: btn-anim1 1s linear infinite;
-}
+} */
 
-@keyframes btn-anim1 {
+/* @keyframes btn-anim1 {
     0% {
         left: -100%;
     }
@@ -189,4 +190,4 @@
     outline: none;
     background: transparent;
     font-weight: bold;
-}
+} */
