@@ -42,3 +42,9 @@
     box-shadow: 4px 6px 6px black;
     text-shadow: 3px 3px 10px black;
 }
+
+#c-error,
+#u-exists {
+    color: red;
+    font-weight: bold;
+}

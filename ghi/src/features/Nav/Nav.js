@@ -23,7 +23,7 @@ export default function Nav() {
   return (
     <>
       <nav>
-        <div className="nav-wrapper">
+        <div className="nav-wrapper indigo lighten-3">
           <NavLink to="/">
             <img id="logo" src={logo} alt="Wander Wise" />
           </NavLink>
