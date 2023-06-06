@@ -1,17 +1,12 @@
 import "./Nav.css";
 
 import { NavLink } from "react-router-dom";
-import {
-  useLogoutMutation,
-  useGetTokenQuery,
-
-} from "../../app/apiSlice";
+import { useLogoutMutation, useGetTokenQuery } from "../../app/apiSlice";
 import logo from "../Hero/logo.png";
 import { useEffect } from "react";
 import M from "materialize-css/dist/js/materialize.min.js";
 
 export default function Nav() {
-
   const { data: account } = useGetTokenQuery();
   const [logout] = useLogoutMutation();
 
@@ -23,7 +18,7 @@ export default function Nav() {
   return (
     <>
       <nav>
-        <div className="nav-wrapper indigo lighten-3">
+        <div className="nav-wrapper cyan darken-3">
           <NavLink to="/">
             <img id="logo" src={logo} alt="Wander Wise" />
           </NavLink>
