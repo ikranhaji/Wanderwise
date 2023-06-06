@@ -15,29 +15,19 @@ function UserRecommendationDetails() {
 	const params = useParams()
 	const itemId = params.itemId
 	const { data, isLoading } = useGetRecommendationDetailsQuery({ id: itemId });
-	console.log(data);
 	if (isLoading) return <div>Loading</div>
 	const listItems = data.recommendations.split(/\d+/g).filter(item => item !== '')
-	console.log(listItems)
-
 
 
 	return (
 		<>
-
 			<div className='my-container'>
-
-
 				<div className="my-card">
-
 					<img id="details-images" src={vegas} />
 					<br></br>
 					<div className='float-right'>
-
 						<span id='my-card-title' className="card-title">{data.location}</span>
 					</div>
-
-
 					<div id='my-card-content' className="card-content">
 						<ol>
 							{listItems.map((item, index) => (
