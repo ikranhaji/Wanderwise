@@ -45,24 +45,15 @@ async def save_recommendation(
     recommendation: RecommendationQueries = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data)
 ):
-    print(account_data)
     return recommendation.create(info, account_id=account_data["id"])
 
 
 @router.get("/recommendations/", tags=["Recommendations"], response_model=List[RecommendationSaveOut])
 async def list_recommendation(
-    # request: Request,
     account_data: dict = Depends(authenticator.get_current_account_data),
     recommendation: RecommendationQueries = Depends()
 ):
     return recommendation.get(account_id=account_data["id"])
-
-# @router.get("/recommendations_one/")
-# async def list_recommendation(
-#     # request: Request,
-#     recommendation: RecommendationQueries = Depends()
-# ):
-#     return recommendation.get_one()
 
 
 @router.get("/recommendations/{id}", tags=["Recommendations"], response_model=RecommendationSaveOut)
