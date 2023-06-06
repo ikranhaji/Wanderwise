@@ -34,12 +34,12 @@
 #friends {
 	width: 350px;
 	border-radius: 50%;
-  box-shadow: 3px 3px 14px black;
+	box-shadow: 3px 3px 14px black;
 }
 
 #about-text > h1 {
 	font-family: 'Seaweed Script', cursive;
-  border-bottom: 1px solid white;
+	border-bottom: 1px solid white;
 }
 #about-text {
   text-align: center;

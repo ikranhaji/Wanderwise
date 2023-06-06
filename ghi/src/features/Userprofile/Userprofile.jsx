@@ -6,13 +6,13 @@ import {
 import { Link, useNavigate } from 'react-router-dom';
 import vegas from './images/vegas.jpg';
 import './Userprofile.css';
+import pfp from './images/pfp.png'
 
 function Userprofile() {
 	const navigate = useNavigate();
 	const { data } = useGetRecommendationListQuery();
 	const { data: account} = useGetTokenQuery();
 	const [deleteRec, result] = useDeleteRecommendationDetailsMutation();
-	console.log(account)
 
 	return (
 		<>
@@ -20,7 +20,9 @@ function Userprofile() {
 				<div className="rec-container">
 					<div className="recommendations">
 						<div id="title-header">
-							<h1>{} Recomendations</h1>
+
+						<img id='profile-pfp' src={pfp}/>
+							<h4>{account && account.full_name.toUpperCase()[0] + account.full_name.substring(1)}'s Recomendations</h4>
 						</div>
 
 						{data?.map((item) => {

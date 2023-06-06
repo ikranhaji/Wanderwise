@@ -5,7 +5,7 @@ import {
 	useGetTokenQuery,
 	useDeleteAccountMutation,
 } from '../../app/apiSlice';
-import logo from '../Hero/logo.png';
+import logo from '../Hero/images/logo.png';
 
 
 
@@ -25,6 +25,7 @@ export default function Nav() {
 		          <img id="logo" src={logo} alt="Wander Wise" />
 		        </NavLink>
 		        <ul id="nav-mobile" className="right">
+					<li><NavLink to="about">About Us</NavLink></li>
 		          <li>
 		            {account && (
 		              <NavLink to="/createrecommendations">RECOMMENDATIONS</NavLink>

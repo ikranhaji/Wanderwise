@@ -1,5 +1,5 @@
 import './Hero.css';
-import logo from './logo.png'
+import logo from './images/logo.png'
 import { Link, useNavigate } from 'react-router-dom';
 import ikran from './images/ikran.jpeg';
 import jeny from './images/jeny.jpeg';
@@ -7,6 +7,7 @@ import jason from './images/jason.jpeg';
 import pfp from '../Userprofile/images/pfp.png';
 import tropicalVid from './images/tropical-vid.mp4'
 import friends from './images/Traveling-friends.png'
+import ImageCarosel from '../ImageCarosel/ImageCarosel';
 
 
 export default function Hero(props) {
@@ -53,9 +54,9 @@ export default function Hero(props) {
 				</div> */}
 				</div>
 			</div>
-
 			<div className="about-us">
 				<div className="about-image">
+
 					<img id="friends" src={friends} />
 				</div>
 				<article id="about-text">
@@ -76,7 +77,7 @@ export default function Hero(props) {
 							navigate('/auth/signup');
 						}}
 						className="waves-effect  light-green accent-4 btn"
-					>
+						>
 						Sign Up
 					</button>
 				</article>
@@ -217,6 +218,7 @@ export default function Hero(props) {
 					</div>
 				</div>
 			</div>
+						<ImageCarosel/>
 
 			<footer className="page-footer">
 				<div className="container">

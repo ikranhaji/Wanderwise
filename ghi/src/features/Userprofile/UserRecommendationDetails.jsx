@@ -26,7 +26,7 @@ function UserRecommendationDetails() {
 			<div className="my-container">
 				<div className="my-card">
 					<div>
-					<img id="details-images" src={vegas} />
+						<img id="details-images" src={vegas} />
 					</div>
 					<br></br>
 					<div className="float-right">
