@@ -12,40 +12,8 @@ class RecommendationQueries(MongoQueries):
         for recommendation in self.collection.find({"account_id": account_id}):
             recommendation["id"] = str(recommendation["_id"])
             recommendations.append(RecommendationSaveOut(**recommendation))
-        print("this is recommendations the list ==>>>", recommendations)
         return recommendations
 
-    # def get_one(self) -> RecommendationSaveOut:
-    #     pipeline = [
-    #         {'$match': {'location': 'NYC'}},
-    #         {
-    #             '$lookup': {
-    #                 'from': 'accounts',
-    #                 'localField': 'account_id',
-    #                 'foreignField': '_id',
-    #                 'as': 'account_id'
-    #             }
-    #         }, {
-    #             '$addFields': {
-    #                 'account_id': {
-    #                     '$map': {
-    #                         'input': '$account_id',
-    #                         'as': 'account',
-    #                         'in': {
-    #                             'username': '$$account.username',
-    #                             'name': '$$account.full_name',
-    #                             'id': '$$account._id'
-    #                         }
-    #                     }
-    #                 }
-    #             }
-    #         }
-    #     ]
-    #     response = self.collection.aggregate(pipeline)
-    #     for doc in response:
-    #         doc['id'] = str(doc["_id"])
-    #         doc["account_id"] = str(doc["account_id"])
-    #         return  RecommendationSaveOut(**doc)
 
     def create(
         self, info: RecommendationSaveIn, account_id: str

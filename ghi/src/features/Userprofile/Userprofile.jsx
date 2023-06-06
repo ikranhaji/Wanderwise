@@ -1,5 +1,5 @@
-import { useGetRecommendationListQuery, useGetTokenQuery, useDeleteRecommendationDetailsMutation } from "../../app/apiSlice"
-import { Link, useNavigate } from "react-router-dom"
+import { useGetRecommendationListQuery, useDeleteRecommendationDetailsMutation } from "../../app/apiSlice"
+import { useNavigate } from "react-router-dom"
 import vegas from './images/vegas.jpg';
 import "./Userprofile.css"
 
@@ -7,9 +7,7 @@ import "./Userprofile.css"
 function Userprofile() {
 	const navigate = useNavigate()
 	const { data } = useGetRecommendationListQuery()
-	const { data: account } = useGetTokenQuery()
-	console.log(account)
-	const [deleteRec, result] = useDeleteRecommendationDetailsMutation()
+	const [deleteRec] = useDeleteRecommendationDetailsMutation()
 
 
 	return (
@@ -21,7 +19,7 @@ function Userprofile() {
 						deleteRec({ id: item.id })
 					}
 					return (
-						<div className="col s12 m7">
+						<div key={item.id} className="col s12 m7">
 							<div className="card">
 								<div>
 									<img id="pfp" src={vegas} />
@@ -46,8 +44,6 @@ function Userprofile() {
 										Details
 										<i className="material-icons right">details</i>
 									</button>
-									{/*
-														<Link to={`/recdetails/${item.id}`}>Details</Link> */}
 									<button
 										onClick={handleDelete}
 										className="btn waves-effect red lighten-1"
@@ -71,13 +67,3 @@ function Userprofile() {
 
 
 export default Userprofile
-
-
-
-{/* <NavLink to='/' onClick={handleDelete}>delete Account</NavLink> */ }
-
-// const handleDelete = (data) => {
-// 	console.log(account)
-// 	logout()
-// 	deleteAccount(data)
-// }

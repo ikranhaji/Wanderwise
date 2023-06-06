@@ -9,10 +9,14 @@ import jason from "./images/jason.jpeg";
 import pfp from "../Userprofile/images/pfp.png";
 import suitcase from "./images/suitcase.png";
 import tropicalVid from "./tropical.mp4";
+import { useEffect } from "react";
 // import classes from './BackgroundVideo.module.css'
 
 export default function Hero(props) {
-  props.funcNav(false);
+  useEffect(() => {
+    props.funcNav(false);
+  }, [])
+
   return (
     <>
       {/* <div className="Maincontainer">
