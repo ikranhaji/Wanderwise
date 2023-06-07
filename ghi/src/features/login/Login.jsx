@@ -30,40 +30,48 @@ const Login = () => {
     }
   };
   return (
-    <div className="login-form">
-      <div className="login-box">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <div className="user-box">
-            <input id="u" type="text" name="" required
-              value={username}
-              onChange={(e) => {
-                setUserName(e.target.value)
-              }}
-              placeholder='Username'
-            />
+		<div className="login-form">
+			<div class="login-box">
+				<h2>Login</h2>
+				<form onSubmit={handleSubmit}>
+					<div class="user-box">
+						<input
+							id="u"
+							type="text"
+							name=""
+							required
+							value={username}
+							onChange={(e) => {
+								setUserName(e.target.value);
+							}}
+							placeholder="Username"
+						/>
+					</div>
+					<div class="user-box">
+						<input
+							id="p"
+							type="password"
+							name=""
+							required
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
+							placeholder="Password"
+						/>
+					</div>
 
-          </div>
-          <div className="user-box" >
-            <input id="p" type="password" name="" required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder='Password'
-            />
-            <p id="u-exists" className="error-message">{formError.username}</p>
-          </div>
-
-          <button type="submit">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-          </button>
-        </form>
-      </div>
-    </div>
-  );
+					<button
+						id="submit-btn"
+						class="btn waves-effect waves-light"
+						type="submit"
+						name="action"
+					>
+						Submit
+						<i class="material-icons right">send</i>
+					</button>
+				</form>
+			</div>
+		</div>
+	);
 };
 
 export default Login;
