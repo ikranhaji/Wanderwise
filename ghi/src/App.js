@@ -11,6 +11,7 @@ import Recommendation from "./features/Recommendation/Recommendation";
 import Userprofile from "./features/Userprofile/Userprofile";
 import UserRecommendationDetails from "./features/Userprofile/UserRecommendationDetails";
 import AboutUsPage from './features/AboutUsPage/AboutUsPage';
+import Tos from './features/Tos/Tos';
 
 function App() {
   const [showNav, setShowNav] = useState(true);
@@ -31,6 +32,10 @@ function App() {
           path="/recdetails/:itemId"
           element={<UserRecommendationDetails />}
         />
+        <Route path='TermsOfService' element={<Tos />} />
+
+
+
       </Routes>
       <Footer />
     </BrowserRouter>

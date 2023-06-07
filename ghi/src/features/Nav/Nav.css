@@ -1,9 +1,25 @@
 #logo {
-  width: 200px;
+  width: 340px;
   height: 100%;
+  filter: brightness(1.2)
 }
 
-#navyy {
-  height: 100%;
-  line-height: 400%;
+
+
+#nav-pfp {
+  height: 30px;
+  margin-right: 5px;
+}
+
+#welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#username-text {
+  margin: 0px 5px;
+  color:blue;
+  font-weight:600;
+  text-decoration-line: underline;
 }

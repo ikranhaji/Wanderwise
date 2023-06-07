@@ -3,6 +3,7 @@ import { useCreateAccountMutation } from '../../app/apiSlice';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Signup.css';
+import SubmitBtn from '../Buttons/SubmitBtn';
 
 const Signup = () => {
 	const navigate = useNavigate();
@@ -20,7 +21,6 @@ const Signup = () => {
 		password: "",
 		confirmPassword: "",
 	});
-
 
 
 	const handleSubmit = async (e) => {
@@ -68,7 +68,9 @@ const Signup = () => {
 									placeholder="Username"
 									required
 								/>
-								<p id="u-exists" className="error-message">{formError.username}</p>
+								<p id="u-exists" className="error-message">
+									{formError.username}
+								</p>
 							</div>
 							<div className="input-field col s6">
 								<input
@@ -111,6 +113,7 @@ const Signup = () => {
 							</div>
 						</div>
 						<div className="row">
+
 							<div className="input-field col s12">
 								<input
 									id="confirmpassword"
@@ -121,18 +124,12 @@ const Signup = () => {
 									placeholder="Confirm Password"
 									required
 								/>
-								<p id="c-error" className="error-message">{formError.confirmPassword}</p>
+								<p id="c-error" className="error-message">
+									{formError.confirmPassword}
+								</p>
 							</div>
 						</div>
-						<button
-							id="submit-btn"
-							className="btn waves-effect waves-light"
-							type="submit"
-							name="action"
-						>
-							Submit
-							<i className="material-icons right">send</i>
-						</button>
+						<SubmitBtn />
 					</form>
 				</div>
 			</div>
