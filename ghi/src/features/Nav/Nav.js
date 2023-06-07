@@ -12,8 +12,6 @@ export default function Nav() {
   const [logout] = useLogoutMutation();
 
   useEffect(() => {
-    let mydrop = document.querySelectorAll('.dropdown-trigger');
-		M.Dropdown.init(mydrop);
     let sidenav = document.querySelector(".sidenav");
     M.Sidenav.init(sidenav, {});
   });
