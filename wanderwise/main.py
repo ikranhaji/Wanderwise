@@ -5,11 +5,16 @@ from authenticator import authenticator
 from routers import accounts, recommendations
 
 
-
 app = FastAPI()
 app.include_router(authenticator.router)
 app.include_router(accounts.router)
 app.include_router(recommendations.router)
+
+
+@app.get("/")
+def home():
+    return "Welcome"
+
 
 app.add_middleware(
     CORSMiddleware,
