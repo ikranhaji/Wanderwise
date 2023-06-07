@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCreateRecommendationMutation, useGetTokenQuery } from '../../app/apiSlice';
 import RecommendationResults from '../../features/Recommendation/Recommendationresults';
 import loading from './loading.gif';
+import {useRef} from 'react'
 import './Recommendation.css'
 import { useNavigate } from 'react-router-dom';
 import SubmitBtn from '../Buttons/SubmitBtn';
@@ -14,6 +15,7 @@ function RecommendationForm() {
 	const [create, result] = useCreateRecommendationMutation();
 	const [isLoading, setIsLoading] = useState(false);
 	const {data: account, isFetching} = useGetTokenQuery()
+	const login = useRef(true);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
@@ -21,10 +23,17 @@ function RecommendationForm() {
 		await create({ interest, location });
 		setIsLoading(false);
 	};
+
+	useEffect(() => {
+    if (login.current) {
+      login.current = false;
+    } else if (!isLoading && !account) {
+      navigate('/');
+    }
+  	}, [account, isLoading, navigate]);
+
 	return (
 		<>
-		{isFetching ?
-		navigate('/') :
 		<div className='recommendation-form'>
 			<div className='recommendation'>
 				<div className='row'>
@@ -64,7 +73,6 @@ function RecommendationForm() {
 				</div>
 			</div>
 		</div>
-		}
 		</>
 		);
 	}

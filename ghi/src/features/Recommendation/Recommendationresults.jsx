@@ -25,12 +25,12 @@ function RecommendationResults(props) {
 							<div className='center'>
 							<button
 								onClick={handleClick}
-								class="btn waves-effect waves-light"
+								className="btn waves-effect waves-light"
 								type="submit"
 								name="action"
 							>
 								Save
-								<i class="material-icons right">add_circle_outline</i>
+								<i className="material-icons right">add_circle_outline</i>
 							</button>
 							</div>
 						)}
