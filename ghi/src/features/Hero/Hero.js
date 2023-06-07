@@ -131,7 +131,7 @@ export default function Hero(props) {
               About Ikran<i className="material-icons right">close</i>
             </span>
             <p>
-              I'm Ikran Haji, a 26 year old dedicated software developer
+              I'm Ikran Haji, a software developer
               committed to delivering high-quality software solutions.With a
               keen interest in staying up-to-date with the latest industry
               trends.I continuously enhance my skills and knowledge. My passion
@@ -145,6 +145,9 @@ export default function Hero(props) {
               thrilled to dive deeper into the captivating world of software,
               where endless possibilities await.
             </p>
+			<Link to="https://www.linkedin.com/in/ikran-haji-458098260/">
+              Lets Connect!
+            </Link>
           </div>
           <div className="card-action">
             <Link to="https://www.linkedin.com/in/ikran-haji-458098260/">
