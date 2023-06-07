@@ -125,9 +125,6 @@ export default function Hero(props) {
             <span className="card-title activator grey-text text-darken-4">
               Ikran Haji<i className="material-icons right">more_vert</i>
             </span>
-            <p>
-              <Link to="#">This is Link link</Link>
-            </p>
           </div>
           <div className="card-reveal">
             <span className="card-title grey-text text-darken-4">
@@ -230,7 +227,7 @@ export default function Hero(props) {
         </div>
         <div className="front-card card">
           <div className="card-image waves-effect waves-block waves-light">
-            <img className="activator" src={paul} />
+            <img id="paul" className="activator" src={paul} />
           </div>
           <div className="card-content">
             <span className="card-title activator grey-text text-darken-4">
