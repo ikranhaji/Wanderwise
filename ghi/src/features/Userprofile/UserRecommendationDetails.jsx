@@ -54,4 +54,4 @@ function UserRecommendationDetails() {
 	);
 }
 
-export default UserRecommendationDetails
+export default UserRecommendationDetails;

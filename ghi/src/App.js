@@ -10,6 +10,7 @@ import Signup from "./features/Signup/Signup";
 import Recommendation from "./features/Recommendation/Recommendation";
 import Userprofile from "./features/Userprofile/Userprofile";
 import UserRecommendationDetails from "./features/Userprofile/UserRecommendationDetails";
+import AboutUsPage from './features/AboutUsPage/AboutUsPage';
 
 function App() {
   const [showNav, setShowNav] = useState(true);
@@ -23,6 +24,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
         </Route>
+          <Route path="about" element={<AboutUsPage/>} />
         <Route path="/createrecommendations" element={<Recommendation />} />
         <Route path="/myprofile" element={<Userprofile />} />
         <Route
