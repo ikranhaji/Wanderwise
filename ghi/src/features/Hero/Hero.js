@@ -131,11 +131,22 @@ export default function Hero(props) {
           </div>
           <div className="card-reveal">
             <span className="card-title grey-text text-darken-4">
-              Card Title<i className="material-icons right">close</i>
+              About Ikran<i className="material-icons right">close</i>
             </span>
             <p>
-              Here is some more information about this product that is only
-              revealed once clicked on.
+              I'm Ikran Haji, a 26 year old dedicated software developer
+              committed to delivering high-quality software solutions.With a
+              keen interest in staying up-to-date with the latest industry
+              trends.I continuously enhance my skills and knowledge. My passion
+              lies in creating robust and user-friendly web applications that
+              meet client and user expectations. With a strong foundation in
+              React, I build dynamic and interactive interfaces that enhance the
+              user experience.I'm also proficient in HTML and CSS. Additionally,
+              I have experience with backend technologies such as FastAPI,
+              Django, and databases like MongoDB and PostgreSQL, enabling me to
+              develop efficient and scalable server-side solutions. I am
+              thrilled to dive deeper into the captivating world of software,
+              where endless possibilities await.
             </p>
           </div>
           <div className="card-action">
@@ -153,21 +164,31 @@ export default function Hero(props) {
             <span className="card-title activator grey-text text-darken-4">
               Jeny Kim<i className="material-icons right">more_vert</i>
             </span>
-            <p>
-              <Link to="#">This is Link link</Link>
-            </p>
           </div>
           <div className="card-reveal">
             <span className="card-title grey-text text-darken-4">
-              Card Title<i className="material-icons right">close</i>
+              About Jeny<i className="material-icons right">close</i>
             </span>
             <p>
-              Here is some more information about this product that is only
-              revealed once clicked on.
+              I'm Jeny Kim, a 24-year-old software developer based in NYC with
+              expertise in JavaScript, Python, HTML/CSS, PostgreSQL, MongoDB,
+              React, Redux, FastAPI, and GitLab Pipelines. In web development, I
+              thrive at creating visually appealing and functional user
+              interfaces. I also have a strong background in backend
+              development, managing databases, and building server-side
+              applications. With my proficiency in collaboration and version
+              control tools, I can streamline the development process and
+              deliver top-notch solutions. I'm truly passionate about coding and
+              make it a priority to stay updated with the latest industry
+              trends. I'm excited to bring my valuable skills and unwavering
+              commitment to excellence to any software development team.
             </p>
+            <Link to="https://www.linkedin.com/in/jenykimh/">
+              Add me on LinkedIn!
+            </Link>
           </div>
           <div className="card-action">
-            <Link to="#">Linkedin</Link>
+            <Link to="https://www.linkedin.com/in/jenykimh/">Linkedin</Link>
             <Link to="https://gitlab.com/jenykimh">git hub</Link>
           </div>
         </div>
@@ -180,21 +201,30 @@ export default function Hero(props) {
             <span className="card-title activator grey-text text-darken-4">
               Gianni Thi<i className="material-icons right">more_vert</i>
             </span>
-            <p>
-              <Link to="#">This is Link link</Link>
-            </p>
           </div>
           <div className="card-reveal">
             <span className="card-title grey-text text-darken-4">
-              Card Title<i className="material-icons right">close</i>
+              About Gianni<i className="material-icons right">close</i>
             </span>
             <p>
-              Here is some more information about this product that is only
-              revealed once clicked on.
+              My name is Gianni Thi, and I'm from the heart of Silicon Valley,
+              San Jose, California. Born and raised amidst tech giants and
+              innovative startups, I am an aspiring software developer, driven
+              by my fascination for technology. My particular interest lies in
+              the dynamic realm of Artificial Intelligence, which I believe
+              holds the key to unprecedented advancements in the future of
+              technology.In my journey as a software developer, I'm eager to
+              delve into the complexities of AI, motivated by a vision of
+              exploring and harnessing its vast potential. My passion for
+              coding, combined with my perpetual curiosity for learning, propels
+              me to break barriers and embrace challenges. As a tech enthusiast,
+              my ultimate goal is to contribute to the field of AI technology,
+              and I'm thrilled about the exciting opportunities that lie ahead
+              in this ever-evolving landscape.
             </p>
           </div>
           <div className="card-action">
-            <Link to="#">Linkedin</Link>
+            <Link to="https://www.linkedin.com/in/gianni-thi/">Linkedin</Link>
             <Link to="https://gitlab.com/gianniyonnithi">git hub</Link>
           </div>
         </div>
