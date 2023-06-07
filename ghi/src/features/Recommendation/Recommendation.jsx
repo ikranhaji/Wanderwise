@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
-import { useCreateRecommendationMutation } from '../../app/apiSlice';
+import { useCreateRecommendationMutation, useGetTokenQuery } from '../../app/apiSlice';
 import RecommendationResults from '../../features/Recommendation/Recommendationresults';
 import loading from './loading.gif';
 import './Recommendation.css'
+import { useNavigate } from 'react-router-dom';
+import SubmitBtn from '../Buttons/SubmitBtn';
 
 
 function RecommendationForm() {
+	const navigate = useNavigate()
 	const [interest, setInterest] = useState('');
 	const [location, setLocation] = useState('');
 	const [create, result] = useCreateRecommendationMutation();
 	const [isLoading, setIsLoading] = useState(false);
+	const {data: account, isFetching} = useGetTokenQuery()
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setIsLoading(true);
 		await create({ interest, location });
 		setIsLoading(false);
 	};
-
 	return (
 		<>
+		{isFetching ?
+		navigate('/') :
 		<div className='recommendation-form'>
 			<div className='recommendation'>
 				<div className='row'>
@@ -31,7 +37,7 @@ function RecommendationForm() {
 						value={interest}
 						onChange={(e) => setInterest(e.target.value)}
 						required
-					/>
+						/>
 					<input
 						placeholder='Location'
 						id="location"
@@ -40,28 +46,27 @@ function RecommendationForm() {
 						value={location}
 						onChange={(e) => setLocation(e.target.value)}
 						required
-					/>
+						/>
 					<div className='center'>
-					<button className="btn waves-effect waves-light" type="submit" name="action">Submit
-							<i className="material-icons right">send</i>
-							</button>
+							<SubmitBtn />
 							</div>
 				</form>
 
 				{isLoading ? (
 					<img id='spinner' src={loading} />
-				) : (
-					<RecommendationResults
+					) : (
+						<RecommendationResults
 						data={result.data}
 						location={location}
 						interest={interest}
-					/>
-				)}
+						/>
+						)}
 				</div>
 			</div>
 		</div>
+		}
 		</>
-	);
-}
+		);
+	}
 
-export default RecommendationForm;
+	export default RecommendationForm;
