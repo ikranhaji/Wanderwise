@@ -110,7 +110,7 @@ export default function Hero(props) {
 						onClick={(e) => {
 							navigate('/auth/signup');
 						}}
-						className="waves-effect  light-green accent-4 btn"
+						className="waves-effect  light-blue accent-4 btn"
 					>
 						Sign Up
 					</button>

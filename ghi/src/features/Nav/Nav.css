@@ -1,5 +1,5 @@
 #logo {
-  width: 340px;
+  width: min(200px, 340px);
   height: 100%;
   filter: brightness(1.2)
 }
