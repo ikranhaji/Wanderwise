@@ -126,17 +126,20 @@ export default function Hero(props) {
 						<span className="card-title activator grey-text text-darken-4">
 							Ikran Haji<i className="material-icons right">more_vert</i>
 						</span>
-						<p>
-							<Link to="#">This is Link link</Link>
-						</p>
 					</div>
 					<div className="card-reveal">
 						<span className="card-title grey-text text-darken-4">
-							Card Title<i className="material-icons right">close</i>
+							About Ikran <i className="material-icons right">close</i>
 						</span>
 						<p>
-							Here is some more information about this product that is only
-							revealed once clicked on.
+						I'm a dedicated software developer committed to delivering high-quality software solutions.
+						With a keen interest in staying up-to-date with the latest industry trends,
+						I continuously enhance my skills and knowledge. My passion lies in creating robust
+						and user-friendly web applications that meet client and user expectations. With a strong foundation
+						in React, I build dynamic and interactive interfaces that enhance the user experience.
+						I'm also proficient in HTML and CSS. Additionally, I have experience with backend
+						technologies such as FastAPI, Django, and databases like MongoDB and PostgreSQL,
+						enabling me to develop efficient and scalable server-side solutions.
 						</p>
 					</div>
 					<div className="card-action">
@@ -154,9 +157,6 @@ export default function Hero(props) {
 						<span className="card-title activator grey-text text-darken-4">
 							Jeny Kim<i className="material-icons right">more_vert</i>
 						</span>
-						<p>
-							<Link to="#">This is Link link</Link>
-						</p>
 					</div>
 					<div className="card-reveal">
 						<span className="card-title grey-text text-darken-4">
@@ -181,9 +181,6 @@ export default function Hero(props) {
 						<span className="card-title activator grey-text text-darken-4">
 							Gianni Thi<i className="material-icons right">more_vert</i>
 						</span>
-						<p>
-							<Link to="#">This is Link link</Link>
-						</p>
 					</div>
 					<div className="card-reveal">
 						<span className="card-title grey-text text-darken-4">
