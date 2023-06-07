@@ -5,6 +5,7 @@ import paul from "./images/paul.jpg";
 import ikran from "./images/ikran.jpeg";
 import jeny from "./images/jeny.jpeg";
 import jason from "./images/jason.jpeg";
+import gianni from "./images/gianni.jpg";
 import pfp from "../Userprofile/images/pfp.png";
 import tropicalVid from "./images/tropical-vid.mp4";
 import friends from "./images/Traveling-friends.png";
@@ -195,7 +196,7 @@ export default function Hero(props) {
 
         <div className="front-card card">
           <div className="card-image waves-effect waves-block waves-light">
-            <img className="activator" src={pfp} />
+            <img id="gianni" className="activator" src={gianni} />
           </div>
           <div className="card-content">
             <span className="card-title activator grey-text text-darken-4">
