@@ -9,8 +9,10 @@ import tropicalVid from './images/tropical-vid.mp4';
 import friends from './images/Traveling-friends.png';
 import ImageCarosel from '../ImageCarosel/ImageCarosel';
 import { useEffect } from 'react';
+import { useGetTokenQuery } from "../../app/apiSlice";
 
 export default function Hero(props) {
+	const { data: account } = useGetTokenQuery();
 	const navigate = useNavigate();
 	useEffect(()=> {
 		props.funcNav(false);
@@ -27,7 +29,10 @@ export default function Hero(props) {
 						<p className="rotated-text">My Traveling AI Companion</p>
 					</div>
 
+
+					{!account &&
 					<div className="button-box">
+					<>
 						<button
 							onClick={(e) => {
 								navigate(`/auth/login`);
@@ -50,10 +55,38 @@ export default function Hero(props) {
 							Sign-up
 							<i className="material-icons right">play_circle_filled</i>
 						</button>
+						</>
 					</div>
-					{/* <div className='cta'>
-						Contact us
-				</div> */}
+					}
+					{account &&
+					<div className="btn-box">
+						<>
+							<button
+								onClick={(e) => {
+									navigate(`/createrecommendations`);
+								}}
+								className="btn waves-effect amber darken-3"
+								type="submit"
+								name="action"
+							>
+								Recommendation
+								<i className="material-icons right"></i>
+							</button>
+							<button
+								onClick={(e) => {
+									navigate(`/myprofile`);
+								}}
+								className="btn waves-effect pink darken-1"
+								type="submit"
+								name="action"
+							>
+								Profile
+								<i className="material-icons right">play_circle_filled</i>
+							</button>
+						</>
+					</div>
+
+					}
 				</div>
 			</div>
 			<div className="about-us">
