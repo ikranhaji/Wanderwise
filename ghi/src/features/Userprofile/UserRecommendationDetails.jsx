@@ -1,11 +1,12 @@
-import { useGetRecommendationDetailsQuery, useDeleteRecommendationDetailsMutation } from "../../app/apiSlice"
+import { useGetRecommendationDetailsQuery, useDeleteRecommendationDetailsMutation, useGetTokenQuery } from "../../app/apiSlice"
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import './Userprofile.css'
 import vegas from './images/vegas.jpg';
 
 function UserRecommendationDetails() {
 	const navigate = useNavigate()
-	const [deleteRec, result] = useDeleteRecommendationDetailsMutation()
+	const [deleteRec] = useDeleteRecommendationDetailsMutation()
+	const {data: account, isFetching} = useGetTokenQuery()
 	const handleDelete = (e) => {
 		e.preventDefault();
 		deleteRec({ id: itemId })
@@ -21,6 +22,7 @@ function UserRecommendationDetails() {
 
 	return (
 		<>
+		{ isFetching ? navigate('/') :
 			<div className='my-container'>
 				<div className="my-card">
 					<img id="details-images" src={vegas} />
@@ -32,7 +34,7 @@ function UserRecommendationDetails() {
 						<ol>
 							{listItems.map((item, index) => (
 								<li key={index}>{item.substring(1)}</li>
-							))}
+								))}
 						</ol>
 					</div>
 					<div id='button-space'>
@@ -41,7 +43,7 @@ function UserRecommendationDetails() {
 							className="btn waves-effect red lighten-1"
 							type="submit"
 							name="action"
-						>
+							>
 							Delete
 							<i className="material-icons right">delete_forever</i>
 						</button>
@@ -49,6 +51,7 @@ function UserRecommendationDetails() {
 				</div>
 
 			</div>
+}
 
 		</>
 	);

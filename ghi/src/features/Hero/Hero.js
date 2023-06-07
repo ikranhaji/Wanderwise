@@ -8,10 +8,13 @@ import pfp from '../Userprofile/images/pfp.png';
 import tropicalVid from './images/tropical-vid.mp4';
 import friends from './images/Traveling-friends.png';
 import ImageCarosel from '../ImageCarosel/ImageCarosel';
+import { useEffect } from 'react';
 
 export default function Hero(props) {
-	props.funcNav(false);
 	const navigate = useNavigate();
+	useEffect(()=> {
+		props.funcNav(false);
+	},[])
 	return (
 		<>
 			<div className="video-slider">
@@ -171,9 +174,7 @@ export default function Hero(props) {
 						<span className="card-title activator grey-text text-darken-4">
 							Paul Baumann<i className="material-icons right">more_vert</i>
 						</span>
-						<p>
-							<Link to="#">This is Link link</Link>
-						</p>
+
 					</div>
 					<div className="card-reveal">
 						<span className="card-title grey-text text-darken-4">
@@ -197,18 +198,30 @@ export default function Hero(props) {
 						<span className="card-title activator grey-text text-darken-4">
 							Jason A. Lago<i className="material-icons right">more_vert</i>
 						</span>
-						<p>
-							<Link to="#">This is Link link</Link>
-						</p>
 					</div>
 					<div className="card-reveal">
 						<span className="card-title grey-text text-darken-4">
-							Card Title<i className="material-icons right">close</i>
+							About Jason<i className="material-icons right">close</i>
 						</span>
 						<p>
-							Here is some more information about this product that is only
-							revealed once clicked on.
+							My name is Jason A. Lago, and I am a 32-year-old software
+							developer. Over the years, I have honed my skills in a wide range
+							of technologies, including HTML, CSS, React, Fast API, Django,
+							MongoDB, postgres, and many more. I am passionate about crafting
+							robust and user-friendly web applications that meet the needs of
+							clients and users alike. With a solid foundation in HTML and CSS,
+							I have expanded my expertise to include modern frameworks like
+							React, which allows me to build dynamic and interactive
+							interfaces. Additionally, my experience with backend technologies
+							such as Fast API, Django, and databases like MongoDB and postgres
+							enables me to develop efficient and scalable server-side
+							solutions. I am always eager to stay updated with the latest
+							industry trends and continuously enhance my skills to deliver
+							high-quality software solutions.
 						</p>
+						<Link to="https://www.linkedin.com/in/jasonlago36/">
+							Lets Connect!
+						</Link>
 					</div>
 					<div className="card-action">
 						<Link to="https://www.linkedin.com/in/jasonlago36/">Linkedin</Link>
@@ -217,7 +230,6 @@ export default function Hero(props) {
 				</div>
 			</div>
 			<ImageCarosel />
-
 		</>
 	);
 }
