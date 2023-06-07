@@ -1,45 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Londrina+Outline&family=Press+Start+2P&family=Seaweed+Script&family=Shrikhand&family=Sigmar&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bangers&family=Londrina+Outline&family=Press+Start+2P&family=Seaweed+Script&family=Shrikhand&family=Sigmar&display=swap");
 
 .Sign-up {
-	padding: 1em;
-	transform: translate(-50%, -50%);
-	color: black;
+  padding: 1em;
+  transform: translate(-50%, -50%);
+  color: black;
 }
 
 .Login {
-	padding: 1em;
-	transform: translate(-50%, -50%);
-	color: black;
+  padding: 1em;
+  transform: translate(-50%, -50%);
+  color: black;
 }
 
 #hero-logo {
-	width: clamp(400px, 100%, 760px);
-
+  width: clamp(400px, 100%, 760px);
 }
 
 .position {
-	width: 300px;
+  width: 300px;
 }
 
 .about-us {
-	background-color: #f52549;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	color: white;
-	padding: 5rem;
+  background-color: #f52549;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  padding: 5rem;
   flex-wrap: wrap;
 }
 
 #friends {
-	width: 350px;
-	border-radius: 50%;
-	box-shadow: 3px 3px 14px black;
+  width: 350px;
+  border-radius: 50%;
+  box-shadow: 3px 3px 14px black;
 }
 
 #about-text > h1 {
-	font-family: 'Seaweed Script', cursive;
-	border-bottom: 1px solid white;
+  font-family: "Seaweed Script", cursive;
+  border-bottom: 1px solid white;
 }
 #about-text {
   text-align: center;
@@ -50,106 +49,106 @@
   margin-top: 30px;
 }
 
-
 .contributors {
-	background-color: white;
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-	color: white;
-	overflow: auto;
-	width: 100%;
-	padding: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  color: white;
+  overflow: auto;
+  width: 100%;
+  padding: 50px;
 }
 
 .front-card {
-	max-width: 250px;
+  max-width: 250px;
 }
 
+#paul,
 #ikran,
 #jason,
 #jeny {
-	border-radius: 50%;
+  border-radius: 50%;
 }
 
 .slider-container {
-	position: absolute;
-	background-color: rgba(0, 0, 0, 0.7);
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .video-slider {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	color: white;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	overflow: hidden;
-	text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
 }
 
 .desc {
-	margin: 0px 0;
+  margin: 0px 0;
 }
 
 .cta {
-	padding: 15px 40px;
-	border: 1px solid white;
-	display: inline-block;
-	font-size: 24px;
-	font-weight: 400;
-	cursor: pointer;
-	transition: all 0.5s ease;
-	box-shadow: 0 0 10px white, 0 0 20px white;
-	border-radius: 30p;
+  padding: 15px 40px;
+  border: 1px solid white;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 10px white, 0 0 20px white;
+  border-radius: 30p;
 }
 .slider video {
-	position: absolute;
-	top: 0;
-	left: 0;
-	min-width: 100%;
-	min-height: 100vh;
-	z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100vh;
+  z-index: -1;
 }
 
 .button-box {
-	margin-top: 10px;
-	width: 250px;
-	display: flex;
-	justify-content: space-between;
+  margin-top: 10px;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
 }
 .card-reveal {
-	color: black;
+  color: black;
 }
 
 @media only screen and (max-width: 1060px) {
-	.rotated-text {
-		font-family: 'Seaweed Script', cursive;
-		font-size: xx-large;
-	}
+  .rotated-text {
+    font-family: "Seaweed Script", cursive;
+    font-size: xx-large;
+  }
 }
 
 @media only screen and (min-width: 1060px) {
-	.rotated-text {
-		position: absolute;
-		font-family: 'Seaweed Script', cursive;
-		top: 50%;
-		right: 0;
-		font-size: xx-large;
-		transform: rotate(270deg);
-	}
+  .rotated-text {
+    position: absolute;
+    font-family: "Seaweed Script", cursive;
+    top: 50%;
+    right: 0;
+    font-size: xx-large;
+    transform: rotate(270deg);
+  }
 }
 
 .btn-box {
-	margin-top: 10px;
-	width: 330px;
-	display: flex;
-	justify-content: space-between;
+  margin-top: 10px;
+  width: 330px;
+  display: flex;
+  justify-content: space-between;
 }
