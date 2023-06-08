@@ -7,25 +7,25 @@ Input-
 
 ```json
 {
-"account": {
-"id": "string",
-"username": "string",
-"full_name": "string",
-}
+    "account": {
+        "id": "string",
+        "username": "string",
+        "full_name": "string",
+    }
 }
 ```
 Output
 
 ```json
 {
-"access_token": "string",
-"token_type": "Bearer",
-"account": {
-"id": "string",
-"username": "string",
-"full_name": "string",
-"hashed_password": "string"
-}
+    "access_token": "string",
+    "token_type": "Bearer",
+    "account": {
+        "id": "string",
+        "username": "string",
+        "full_name": "string",
+        "hashed_password": "string"
+        }
 }
 ```
 
@@ -36,16 +36,16 @@ Post recommendation - ChatGpt API call
 Input -
 ```json
 {
-"location": "string",
-"interest": "string"
+    "location": "string",
+    "interest": "string"
 }
 ```
 Output -
 ```json
 {
-"recommendations": [
-"string"
-]
+    "recommendations": [
+        "string"
+        ]
 }
 ```
 Get/List Recommendations
@@ -53,12 +53,12 @@ Get/List Recommendations
 Output -
 ```json
 [
-{
-"location": "string",
-"interest": "string",
-"recommendations": "string",
-"id": "string"
-}
+    {
+        "location": "string",
+        "interest": "string",
+        "recommendations": "string",
+        "id": "string"
+    }
 ]
 ```
 Post/Save Recommendations
@@ -66,35 +66,35 @@ Post/Save Recommendations
 Input -
 ```json
 {
-"location": "string",
-"interest": "string",
-"recommendations": "string"
+    "location": "string",
+    "interest": "string",
+    "recommendations": "string"
 }
 ```
 Output -
 ```json
 {
-"location": "string",
-"interest": "string",
-"recommendations": "string",
-"id": "string"
+    "location": "string",
+    "interest": "string",
+    "recommendations": "string",
+    "id": "string"
 }
 ```
 Get Recommendation Details
 ```json
 recommendations : [
-{
-"id: "string"
-}
+    {
+    "id: "string"
+    }
 ]
 ```
 Output -
 ```json
 {
-"location": "string",
-"interest": "string",
-"recommendations": "string",
-"id": "string"
+    "location": "string",
+    "interest": "string",
+    "recommendations": "string",
+    "id": "string"
 }
 ```
 Delete Recommendation
@@ -102,14 +102,14 @@ Delete Recommendation
 Input -
 ```json
 recommendations : [
-{
-"id: "string"
-}
+    {
+    "id: "string"
+    }
 ]
 ```
 Output -
 ```json
 {
-"success": bool
+    "success": bool
 }
 ```
