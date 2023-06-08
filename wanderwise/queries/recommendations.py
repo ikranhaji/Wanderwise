@@ -14,7 +14,6 @@ class RecommendationQueries(MongoQueries):
             recommendations.append(RecommendationSaveOut(**recommendation))
         return recommendations
 
-
     def create(
         self, info: RecommendationSaveIn, account_id: str
     ) -> RecommendationSaveOut:

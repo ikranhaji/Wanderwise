@@ -6,7 +6,7 @@ from fastapi import (
     APIRouter,
     Request,
 )
-from jwtdown_fastapi.authentication import Token
+
 from authenticator import authenticator
 
 from models.auth import (
@@ -58,6 +58,8 @@ async def create_account(
 
 
 @router.delete("/api/accounts/{account_id}", response_model=DeleteStatus)
-def delete_account(accounts: AccountQueries = Depends(),
-                   account_data: dict = Depends(authenticator.get_current_account_data)):
-    return {"success": accounts.delete(account_id = account_data["id"])}
+def delete_account(
+    accounts: AccountQueries = Depends(),
+    account_data: dict = Depends(authenticator.get_current_account_data),
+):
+    return {"success": accounts.delete(account_id=account_data["id"])}
