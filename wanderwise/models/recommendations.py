@@ -6,7 +6,6 @@ class RecommendationIn(BaseModel):
     interest: str
 
 
-
 class RecommendationSaveIn(RecommendationIn):
     recommendations: str
 
