@@ -45,10 +45,10 @@ function Userprofile() {
 								<div className="card">
 									<div>
 										<img id="pfp" src={vegas} />
-										<span className="card-title">{item.location}</span>
 									</div>
 									<div id="my-card-content">
-										<p>
+										<span id='user-profile-card-title' className="card-title">{item.location}</span>
+										<p className='interests-user-profile'>
 											{item.interest.charAt(0).toUpperCase() +
 												item.interest.slice(1).toLowerCase()}
 										</p>

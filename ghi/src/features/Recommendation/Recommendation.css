@@ -2,10 +2,11 @@
 	height: fit-content;
 	width: clamp(400px, 90%, 720px);
 	padding: 20px;
-	margin-top: 50px;
+	margin: 50px 0;
 	background-color: rgba(0, 0, 0, 0.5);
 	border-radius: 20px;
 	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+
 }
 
 .recommendation-form {
@@ -13,7 +14,8 @@
 	justify-content: center;
 	text-align: center;
 	background-color: #85e0d6;
-	height: 100vh;
+	min-height: 100vh;
+	max-height: 100%;
 }
 
 #interest,
@@ -57,14 +59,6 @@
 	display: block;
 }
 
-/* .save button span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #03f4d8);
-    animation: btn-anim1 1s linear infinite;
-}
 
  */
 
