@@ -15,7 +15,7 @@ WanderWise - Welcome to WonderWise, the app that revolutionizes your travel expe
 - [API design](APIdesign.MD)
 - [Data model](Datamodel.MD)
 - [GHI](GHI.MD)
-- [Intergrations](Intergrations.MD)
+- [Intergrations](Integrations.MD)
 
 ## Functionality
 

@@ -1,7 +1,7 @@
-## Acount
+## Account
 
 -Method: Get, Post, Delete
-Path: '/api/accounts
+-Path: '/api/accounts
 
 Input-
 
