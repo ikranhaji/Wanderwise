@@ -1,5 +1,5 @@
 #logo {
-  width: min(50vw, 340px);
+  width: clamp(300px ,50vw, 340px);
   height: 100%;
   filter: brightness(1.2);
 }
