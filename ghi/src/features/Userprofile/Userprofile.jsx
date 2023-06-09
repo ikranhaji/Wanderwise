@@ -24,16 +24,18 @@ function Userprofile() {
 	return (
 		<div className="rec-background">
 			<div className="rec-container">
-				<div className="recommendations">
 					<div id="title-header">
 						<img id="profile-pfp" src={pfp} />
 						<h4>
 							{account && account.full_name &&
 								account.full_name.toUpperCase()[0] +
-									account.full_name.substring(1)}
+								account.full_name.substring(1)}
 							's Recommendations
 						</h4>
 					</div>
+				<div className="recommendations">
+
+
 
 					{data?.map((item) => {
 						const handleDelete = (e) => {
@@ -42,13 +44,15 @@ function Userprofile() {
 						};
 						return (
 							<div key={item.id} className="col s12 m7">
-								<div className="card">
+								<div id="profile-rec-card"  className="card">
 									<div>
 										<img id="pfp" src={vegas} />
 									</div>
 									<div id="my-card-content">
-										<span id='user-profile-card-title' className="card-title">{item.location}</span>
-										<p className='interests-user-profile'>
+										<span id="user-profile-card-title" className="card-title">
+											{item.location}
+										</span>
+										<p className="interests-user-profile">
 											{item.interest.charAt(0).toUpperCase() +
 												item.interest.slice(1).toLowerCase()}
 										</p>
@@ -80,6 +84,7 @@ function Userprofile() {
 							</div>
 						);
 					})}
+
 				</div>
 			</div>
 		</div>

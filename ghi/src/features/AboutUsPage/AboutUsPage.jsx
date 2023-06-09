@@ -7,6 +7,7 @@ const AboutUsPage = () => {
   return (
 		<div className="about-us-main-container">
 			<div className="information-container">
+						<img id='hiking' src={hiking} />
 				<article className="about-us-section">
 					<h1>
 						W<img id="about-friends" src={round} alt="" />
@@ -21,7 +22,6 @@ const AboutUsPage = () => {
 					</p>
 
 					<p>
-						<img id='hiking' src={hiking} />
 						With WonderWise, your travel suggestions are no longer a
 						one-size-fits-all approach. Our AI-powered algorithms analyze your
 						preferences, interests, and previous travel history to curate

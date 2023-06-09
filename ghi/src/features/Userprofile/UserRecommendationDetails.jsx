@@ -30,7 +30,7 @@ function UserRecommendationDetails() {
 					<div className='float-right'>
 						<span id='my-card-title' className="card-title">{data.location}</span>
 					</div>
-					<div id='my-card-content' className="card-content">
+					<div id='details-page-content' className="card-content">
 						<ol>
 							{listItems.map((item, index) => (
 								<li key={index}>{item.substring(1)}</li>
