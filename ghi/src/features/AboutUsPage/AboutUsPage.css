@@ -35,11 +35,13 @@
 
 .about-us-section {
     color: black;
-
+    margin: 10px;
 }
 .about-us-section > p {
     font-size: medium;
-
+    text-indent: 3rem;
+    line-height: 2rem;
+    margin-bottom: 10px;
 }
 .information-container {
     display: flex;
@@ -47,14 +49,17 @@
     align-items: center;
     flex-direction: column;
     background-color: white;
+    width: 75%;
 
-    padding: 30px 0;
-
+    min-height: 100vh;
+    max-height: 100%;
+    padding: 0px 2.5rem;
+    padding-bottom: 50px;
 }
 
 #hiking {
     float:right;
-
+    margin: 10px 0px 10px 10px;
     border-radius: 10px;
     box-shadow: 1px 3px 10px black;
 
