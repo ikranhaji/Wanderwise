@@ -35,7 +35,6 @@
 
 .about-us-section {
     color: black;
-    margin: 10px;
 }
 .about-us-section > p {
     font-size: medium;
@@ -50,17 +49,15 @@
     flex-direction: column;
     background-color: white;
     width: 75%;
-
     min-height: 100vh;
     max-height: 100%;
-    padding: 0px 2.5rem;
+    padding: 0px 3rem;
     padding-bottom: 50px;
 }
 
 #hiking {
     float:right;
-    margin: 10px 0px 10px 10px;
+    margin: 2px;
     border-radius: 10px;
     box-shadow: 1px 3px 10px black;
-
 }
