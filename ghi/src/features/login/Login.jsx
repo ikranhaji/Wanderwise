@@ -45,6 +45,9 @@ const Login = () => {
 							}}
 							placeholder="Username"
 						/>
+						<p id="u-exists" className="error-message">
+							{formError.username}
+						</p>
 					</div>
 					<div className="user-box">
 						<input

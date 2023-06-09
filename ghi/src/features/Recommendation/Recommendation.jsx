@@ -39,21 +39,21 @@ function RecommendationForm() {
 				<div className='row'>
 				<form onSubmit={handleSubmit} className="col s12">
 					<input
-						id="interest"
-						placeholder='Interest'
-						type="text"
-						name="interest"
-						value={interest}
-						onChange={(e) => setInterest(e.target.value)}
-						required
-						/>
-					<input
 						placeholder='Location'
 						id="location"
 						type="text"
 						name="location"
 						value={location}
 						onChange={(e) => setLocation(e.target.value)}
+						required
+						/>
+					<input
+						id="interest"
+						placeholder='Interest'
+						type="text"
+						name="interest"
+						value={interest}
+						onChange={(e) => setInterest(e.target.value)}
 						required
 						/>
 					<div className='center'>
