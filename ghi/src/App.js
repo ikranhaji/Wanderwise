@@ -11,6 +11,7 @@ import Recommendation from "./features/Recommendation/Recommendation";
 import Userprofile from "./features/Userprofile/Userprofile";
 import UserRecommendationDetails from "./features/Userprofile/UserRecommendationDetails";
 import AboutUsPage from './features/AboutUsPage/AboutUsPage';
+import Rec from "./features/tabs/recs";
 
 
 function App() {
@@ -25,17 +26,17 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
         </Route>
-          <Route path="about" element={<AboutUsPage/>} />
+        <Route path="about" element={<AboutUsPage />} />
         <Route path="/createrecommendations" element={<Recommendation />} />
         <Route path="/myprofile" element={<Userprofile />} />
         <Route
           path="/recdetails/:itemId"
           element={<UserRecommendationDetails />}
         />
-
-
-
-
+        <Route
+          path="/tabs"
+          element={<Rec />}
+        />
       </Routes>
       <Footer />
     </BrowserRouter>
