@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { Switch, Route, Link, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 
 import Footer from "./features/Footer/Footer";
 import Nav from "./features/Nav/Nav";
@@ -10,15 +10,18 @@ import Signup from "./features/Signup/Signup";
 import Recommendation from "./features/Recommendation/Recommendation";
 import Userprofile from "./features/Userprofile/Userprofile";
 import UserRecommendationDetails from "./features/Userprofile/UserRecommendationDetails";
-import AboutUsPage from './features/AboutUsPage/AboutUsPage';
-import Rec from "./features/tabs/recs";
-
+import AboutUsPage from "./features/AboutUsPage/AboutUsPage";
 
 function App() {
   const [showNav, setShowNav] = useState(true);
+  const domain = /https:\/\/[^/]+/;
+  const basename = process.env.PUBLIC_URL.replace(
+    domain,
+    "https://wanderwise.gitlab.io/module3-project-gamma/"
+  );
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Nav />
       <Routes>
         <Route path="/" element={<Hero funcNav={setShowNav} />} />
@@ -32,10 +35,6 @@ function App() {
         <Route
           path="/recdetails/:itemId"
           element={<UserRecommendationDetails />}
-        />
-        <Route
-          path="/tabs"
-          element={<Rec />}
         />
       </Routes>
       <Footer />

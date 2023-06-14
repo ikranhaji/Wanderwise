@@ -95,7 +95,7 @@ export const Api = createApi({
 		getRecommendationDetails: builder.query({
 			query: ({id}) => ({
 				url: `/recommendations/${id}`,
-				credentials: 'include'
+				credentials: 'include',
 			}),
 			providesTags: ['Recommendations'],
 		}),
@@ -106,11 +106,19 @@ export const Api = createApi({
 				credentials: 'include',
 			}),
 			invalidatesTags: ['Recommendations'],
+		}),
+		getImage: builder.query({
+			query: ({location}) => ({
+				url: `/images/${location}`,
+				method: 'GET',
+				credentials: 'include',
+			})
 		})
 	}),
 });
 
 export const {
+	useGetImageQuery,
 	useCreateAccountMutation,
 	useLogoutMutation,
 	useLoginMutation,

@@ -8,13 +8,13 @@ client = TestClient(app)
 
 
 class FakeRecommendationsQuery:
-
     def create(self, info: RecommendationSaveIn, account_id: str):
         return {
             "location": "Minneapolis",
             "interest": "food",
             "recommendations": "blah blah",
             "id": "124",
+            "image": "12341235424536"
         }
 
     def get(self, account_id: str):
@@ -26,6 +26,7 @@ class FakeRecommendationsQuery:
             "interest": "food",
             "recommendations": "blah blah",
             "id": "21",
+            "image": "12341235424536"
         }
 
     def delete(self, recommendation_id: str, account_id: str):
@@ -54,6 +55,7 @@ def test_save_recommendation():
         "location": "Minneapolis",
         "interest": "food",
         "recommendations": "blah blah",
+        "image": "12341235424536"
     }
 
     response = client.post("/recommendations/", json=info)
@@ -65,6 +67,7 @@ def test_save_recommendation():
         "interest": "food",
         "recommendations": "blah blah",
         "id": "124",
+        "image": "12341235424536"
     }
 
 

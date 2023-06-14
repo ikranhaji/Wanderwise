@@ -3,17 +3,19 @@ import './Recommendation.css';
 
 function RecommendationResults(props) {
 	const [save] = useSaveRecommendationMutation();
+	console.log(props)
 	const handleClick = (e) => {
 		save({
 			location: props.location,
 			interest: props.interest,
+			image: props.image,
 			recommendations: props.data.join('').toString(),
 		});
 	};
 
 	return (
 		<>
-
+	{console.log(props.data)}
 				<div className="recomendation-text">
 					<div>
 						{props.data?.map((item, index) => {
