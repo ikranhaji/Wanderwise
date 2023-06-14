@@ -21,6 +21,7 @@ lint-test-job:
      DATABASE_URL: 'doesnotmatter'
      DATABASE_NAME: 'doesnotmatter'
      SIGNING_KEY: 'doesnotmatter'
+     API_KEY: 'doesnotmatter'
    script:
      - cd sample_service
      - pip install -r requirements.txt
