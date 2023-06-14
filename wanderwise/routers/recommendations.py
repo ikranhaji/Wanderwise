@@ -17,19 +17,7 @@ import os
 router = APIRouter()
 
 KEY = os.environ["API_KEY"]
-
-@router.get('/images', tags=["Recommendations"])
-async def get_images(location: str):
-    response = requests.get(
-        f'https://api.pexels.com/v1/search?query={location}&per_page=1',
-            headers = {
-                "Content-type": "application/json",
-                "Authorization": 'jslxeCu5r0ytSNXJAcVVoFN4xtx3JTfZn2odwPb1pVE93H5lW5rP9mZR',
-                            })
-    image = (response.json()['photos'][0]['url'])
-    print(image)
-    return {'image': image}
-
+PKEY = os.environ["PEXELS_KEY"]
 
 
 @router.post("/recommendations", tags=["Recommendations"])
@@ -52,18 +40,19 @@ async def post_recommendation(info: RecommendationIn):
         },
     )
     imageResponse = requests.get(
-        f'https://api.pexels.com/v1/search?query={info.location}&per_page=1',
-            headers = {
-                "Content-type": "application/json",
-                "Authorization": 'jslxeCu5r0ytSNXJAcVVoFN4xtx3JTfZn2odwPb1pVE93H5lW5rP9mZR',
-                            })
-    print(imageResponse.json())
-    recommendations = ({
-        'text': response.json()["choices"][0]["message"]["content"].strip().split("\n"),
-        'image': imageResponse.json()['photos'][0]['src']['original']
-    }
-
+        f"https://api.pexels.com/v1/search?query={info.location}&per_page=1",
+        headers={
+            "Content-type": "application/json",
+            "Authorization": f"Bearer {PKEY}",
+        },
     )
+    print(imageResponse.json())
+    recommendations = {
+        "text": response.json()["choices"][0]["message"]["content"]
+        .strip()
+        .split("\n"),
+        "image": imageResponse.json()["photos"][0]["src"]["original"],
+    }
 
     print(recommendations)
     return {"recommendations": recommendations}

@@ -8,7 +8,6 @@ client = TestClient(app)
 
 
 class FakeRecommendationsQuery:
-
     def create(self, info: RecommendationSaveIn, account_id: str):
         return {
             "location": "Minneapolis",

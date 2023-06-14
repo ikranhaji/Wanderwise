@@ -25,6 +25,7 @@ services:
       WAIT_HOSTS: mongo:27017
       SIGNING_KEY: ${SIGNING_KEY}
       API_KEY: ${API_KEY}
+      PEXELS_KEY: ${PEXELS_KEY}
   ghi:
     image: node:lts-bullseye
     command: /bin/bash run.sh
