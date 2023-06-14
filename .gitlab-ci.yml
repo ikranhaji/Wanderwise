@@ -9,7 +9,7 @@ lint-test-job:
   stage: test
   script:
     - pip install flake8
-    - flake8 wanderwise_service
+    - flake8 wanderwise
 
 # # Run the unit tests
  api-unit-tests-job:
@@ -23,7 +23,7 @@ lint-test-job:
      SIGNING_KEY: 'doesnotmatter'
      API_KEY: 'doesnotmatter'
    script:
-     - cd wanderwise_service
+     - cd wanderwise
      - pip install -r requirements.txt
      - python -m pytest
 
