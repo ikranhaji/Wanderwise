@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { Switch, Route, Link, BrowserRouter, Routes } from "react-router-dom";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 
 import Footer from "./features/Footer/Footer";
 import Nav from "./features/Nav/Nav";
@@ -10,8 +10,7 @@ import Signup from "./features/Signup/Signup";
 import Recommendation from "./features/Recommendation/Recommendation";
 import Userprofile from "./features/Userprofile/Userprofile";
 import UserRecommendationDetails from "./features/Userprofile/UserRecommendationDetails";
-import AboutUsPage from './features/AboutUsPage/AboutUsPage';
-
+import AboutUsPage from "./features/AboutUsPage/AboutUsPage";
 
 function App() {
   const [showNav, setShowNav] = useState(true);
@@ -25,17 +24,13 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
         </Route>
-          <Route path="about" element={<AboutUsPage/>} />
+        <Route path="about" element={<AboutUsPage />} />
         <Route path="/createrecommendations" element={<Recommendation />} />
         <Route path="/myprofile" element={<Userprofile />} />
         <Route
           path="/recdetails/:itemId"
           element={<UserRecommendationDetails />}
         />
-
-
-
-
       </Routes>
       <Footer />
     </BrowserRouter>
