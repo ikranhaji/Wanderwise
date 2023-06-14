@@ -39,3 +39,4 @@ class RecommendationQueries(MongoQueries):
             result["id"] = str(result["_id"])
             del result["_id"]
         return result
+
