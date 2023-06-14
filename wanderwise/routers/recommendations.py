@@ -43,7 +43,7 @@ async def post_recommendation(info: RecommendationIn):
         f"https://api.pexels.com/v1/search?query={info.location}&per_page=1",
         headers={
             "Content-type": "application/json",
-            "Authorization": f"Bearer {PKEY}",
+            "Authorization": f"{PKEY}",
         },
     )
     print(imageResponse.json())

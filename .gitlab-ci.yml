@@ -27,6 +27,7 @@ api-unit-tests-job:
     DATABASE_NAME: "doesnotmatter"
     SIGNING_KEY: "doesnotmatter"
     API_KEY: "doesnotmatter"
+    PEXELS_KEY: "doesnotmatter"
   script:
     - cd wanderwise
     - pip install -r requirements.txt
