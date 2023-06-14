@@ -14,9 +14,14 @@ import AboutUsPage from "./features/AboutUsPage/AboutUsPage";
 
 function App() {
   const [showNav, setShowNav] = useState(true);
+  const domain = /https:\/\/[^/]+/;
+  const basename = process.env.PUBLIC_URL.replace(
+    domain,
+    "https://wanderwise.gitlab.io/module3-project-gamma/"
+  );
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Nav />
       <Routes>
         <Route path="/" element={<Hero funcNav={setShowNav} />} />
