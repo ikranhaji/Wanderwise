@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useCreateRecommendationMutation, useGetTokenQuery } from '../../app/apiSlice';
+import { useCreateRecommendationMutation, useGetTokenQuery, useGetImageQuery } from '../../app/apiSlice';
 import RecommendationResults from '../../features/Recommendation/Recommendationresults';
 import loading from './loading.gif';
 import {useRef} from 'react'
@@ -8,7 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import SubmitBtn from '../Buttons/SubmitBtn';
 
 
+
 function RecommendationForm() {
+	const {image} = useGetImageQuery()
 	const navigate = useNavigate()
 	const [interest, setInterest] = useState('');
 	const [location, setLocation] = useState('');
@@ -31,7 +33,7 @@ function RecommendationForm() {
       navigate('/');
     }
   	}, [account, isLoading, navigate]);
-
+	console.log(result)
 	return (
 		<>
 		<div className='recommendation-form'>
@@ -64,11 +66,21 @@ function RecommendationForm() {
 				{isLoading ? (
 					<img id='spinner' src={loading} />
 					) : (
-						<RecommendationResults
-						data={result.data}
-						location={location}
-						interest={interest}
-						/>
+						<>
+						{!result.data ? (
+							<div></div>
+							) : (
+
+								<RecommendationResults
+								data={result.data.text}
+								location={location}
+								image={result.data.image}
+								interest={interest}
+								/>
+								)
+
+							}
+							</>
 						)}
 				</div>
 			</div>

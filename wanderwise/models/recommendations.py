@@ -8,6 +8,7 @@ class RecommendationIn(BaseModel):
 
 class RecommendationSaveIn(RecommendationIn):
     recommendations: str
+    image: str
 
 
 class RecommendationSaveOut(RecommendationSaveIn):
