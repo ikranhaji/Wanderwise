@@ -36,9 +36,9 @@ Need to get four API Keys
 
 - PEXELS API- Go to this website https://www.pexels.com/api/ make an account and recieve an API key
 
--OPENAI API- follow the instructions under intergrations above
+- OPENAI API- follow the instructions under intergrations above
 
--SIGNING KEY- use this command on your terminal openssl rand -hex 32 to generate a signing key
+- SIGNING KEY- use this command on your terminal openssl rand -hex 32 to generate a signing key
 
 ## Getting Started
 Clone this repository to your local machine
