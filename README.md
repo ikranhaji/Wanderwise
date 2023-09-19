@@ -33,8 +33,11 @@ Docker: You must have Docker installed on your system. You can download Docker f
 
 Need to get four API Keys
 - OPEN WEATHER API- Go to this website https://openweathermap.org/api/geocoding-api make an account and recieve an API key
+
 - PEXELS API- Go to this website https://www.pexels.com/api/ make an account and recieve an API key
+
 -OPENAI API- follow the instructions under intergrations above
+
 -SIGNING KEY- use this command on your terminal openssl rand -hex 32 to generate a signing key
 
 ## Getting Started
@@ -44,7 +47,9 @@ Clone this repository to your local machine
 Navigate to the project directory
 - cd wanderwise
 
-Need to create a .env file. Add the API keys you received to your .env file. Each can be structured for example SIGNING_KEY=7dce5c11147011ef69c513b3d4dde94a93d
+You should generate a .env file and then include the API keys you've obtained within it. You can organize them like this, for instance:
+
+- SIGNING_KEY=7dce5c11147011ef69c513b3d4dde94a93d
 
 Run this Docker Compose Command to set up and run the project
 - docker compose up
