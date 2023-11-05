@@ -2,6 +2,7 @@ import { useGetRecommendationDetailsQuery, useDeleteRecommendationDetailsMutatio
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import './Userprofile.css'
 import vegas from './images/vegas.jpg';
+import BackBtn from "../BackButton/BackBtn";
 
 function UserRecommendationDetails() {
 	const navigate = useNavigate()
@@ -44,6 +45,7 @@ function UserRecommendationDetails() {
 							</ol>
 						</div>
 						<div id="button-space">
+							<BackBtn />
 							<button
 								onClick={handleDelete}
 								className="btn waves-effect red lighten-1"
