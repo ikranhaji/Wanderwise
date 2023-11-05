@@ -182,3 +182,14 @@
 	font-size: 20px;
 	font-weight: 400;
 }
+
+.large-tab-button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.tabs_paragraph {
+  font-size: 18px;
+  font-weight: bold;
+}
