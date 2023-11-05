@@ -65,6 +65,13 @@
 	margin-top: 2%;
 	padding: 10px;
 }
+#button-space button {
+  margin-right: 10px;
+}
+
+
+
+
 
 #details-images {
 	width: 100%;
