@@ -22,7 +22,7 @@ const Login = () => {
 		};
 		const response = await login({ username, password });
 		if (response.error) {
-			inputError.username = 'Account does not exist';
+			inputError.username = 'Cannot login with those credentials';
 			setFormError(inputError);
 		} else {
 			navigate('/myprofile');
