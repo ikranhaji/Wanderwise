@@ -16,9 +16,9 @@ import { useGetTokenQuery } from "../../app/apiSlice";
 export default function Hero(props) {
   const { data: account } = useGetTokenQuery();
   const navigate = useNavigate();
-  useEffect(() => {
-    props.funcNav(false);
-  }, []);
+  // useEffect(() => {
+  //   props.funcNav(false);
+  // }, []);
   return (
     <>
       <div className="video-slider">
@@ -105,15 +105,14 @@ export default function Hero(props) {
             wonders of the world and start your extraordinary adventure today
             with WonderWise as your trusted companion.
           </p>
-
-          <button
+         {!account && (<button
             onClick={(e) => {
               navigate("/auth/signup");
             }}
             className="waves-effect  light-blue accent-4 btn"
           >
             Sign Up
-          </button>
+          </button>)}
         </article>
       </div>
 
