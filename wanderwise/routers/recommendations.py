@@ -46,7 +46,7 @@ async def post_recommendation(info: RecommendationIn):
             "Authorization": f"{PKEY}",
         },
     )
-    print(imageResponse.json())
+
     recommendations = {
         "text": response.json()["choices"][0]["message"]["content"]
         .strip()
@@ -54,7 +54,6 @@ async def post_recommendation(info: RecommendationIn):
         "image": imageResponse.json()["photos"][0]["src"]["original"],
     }
 
-    print(recommendations)
     return {"recommendations": recommendations}
 
 
