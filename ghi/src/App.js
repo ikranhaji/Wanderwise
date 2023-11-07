@@ -13,7 +13,6 @@ import UserRecommendationDetails from "./features/Userprofile/UserRecommendation
 import AboutUsPage from "./features/AboutUsPage/AboutUsPage";
 
 function App() {
-  const [showNav, setShowNav] = useState(true);
   const domain = /https:\/\/[^/]+/;
   const basename = process.env.PUBLIC_URL.replace(
     domain,

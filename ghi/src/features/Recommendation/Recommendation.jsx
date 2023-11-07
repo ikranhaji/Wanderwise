@@ -78,7 +78,6 @@ function RecommendationForm() {
 								interest={interest}
 								/>
 								)
-
 							}
 							</>
 						)}

@@ -11,7 +11,6 @@ function RecommendationResults(props) {
 			recommendations: props.data.join('').toString(),
 		});
 	};
-
 	return (
 		<>
 				<div className="recomendation-text">
