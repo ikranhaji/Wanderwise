@@ -31,7 +31,7 @@ WanderWise - Welcome to WonderWise, the app that revolutionizes your travel expe
 ## Prerequisites
 Docker: You must have Docker installed on your system. You can download Docker from Docker's official website
 
-Need to get four API Keys
+Need to get Two API Keys
 - PEXELS API- Go to this website https://www.pexels.com/api/ make an account and recieve an API key
 
 - OPENAI API- follow the instructions under intergrations above
