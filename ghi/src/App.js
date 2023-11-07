@@ -23,7 +23,7 @@ function App() {
     <BrowserRouter basename={basename}>
       <Nav />
       <Routes>
-        <Route path="/" element={<Hero funcNav={setShowNav} />} />
+        <Route path="/" element={<Hero />} />
         <Route path="auth">
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
