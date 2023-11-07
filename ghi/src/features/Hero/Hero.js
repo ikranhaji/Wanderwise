@@ -16,9 +16,6 @@ import { useGetTokenQuery } from "../../app/apiSlice";
 export default function Hero(props) {
   const { data: account } = useGetTokenQuery();
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   props.funcNav(false);
-  // }, []);
   return (
     <>
       <div className="video-slider">
