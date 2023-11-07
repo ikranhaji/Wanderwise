@@ -32,8 +32,6 @@ WanderWise - Welcome to WonderWise, the app that revolutionizes your travel expe
 Docker: You must have Docker installed on your system. You can download Docker from Docker's official website
 
 Need to get four API Keys
-- OPEN WEATHER API- Go to this website https://openweathermap.org/api/geocoding-api make an account and recieve an API key
-
 - PEXELS API- Go to this website https://www.pexels.com/api/ make an account and recieve an API key
 
 - OPENAI API- follow the instructions under intergrations above
