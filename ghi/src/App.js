@@ -13,7 +13,6 @@ import UserRecommendationDetails from "./features/Userprofile/UserRecommendation
 import AboutUsPage from "./features/AboutUsPage/AboutUsPage";
 
 function App() {
-  const [showNav, setShowNav] = useState(true);
   const domain = /https:\/\/[^/]+/;
   const basename = process.env.PUBLIC_URL.replace(
     domain,
@@ -24,7 +23,7 @@ function App() {
     <BrowserRouter basename={basename}>
       <Nav />
       <Routes>
-        <Route path="/" element={<Hero funcNav={setShowNav} />} />
+        <Route path="/" element={<Hero />} />
         <Route path="auth">
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />

@@ -16,9 +16,6 @@ const Signup = () => {
 	const full_name = firstName + ' ' + lastName;
 	const [formError, setFormError] = useState({
 		username: "",
-		firstName: "",
-		lastName: "",
-		password: "",
 		confirmPassword: "",
 	});
 
@@ -28,9 +25,6 @@ const Signup = () => {
 
 		let inputError = {
 			username: "",
-			firstName: "",
-			lastName: "",
-			password: "",
 			confirmPassword: "",
 		};
 		if (confirmPassword !== password) {
@@ -41,7 +35,7 @@ const Signup = () => {
 		} else {
 			const response = await create({ username, password, full_name });
 			if (response.error) {
-				inputError.username = 'Username already exists';
+				inputError.username = 'Username taken';
 				setFormError(inputError);
 			} else {
 				navigate('/createrecommendations');

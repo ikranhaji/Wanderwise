@@ -33,7 +33,7 @@ function RecommendationForm() {
       navigate('/');
     }
   	}, [account, isLoading, navigate]);
-	console.log(result)
+
 	return (
 		<>
 		<div className='recommendation-form'>
@@ -78,7 +78,6 @@ function RecommendationForm() {
 								interest={interest}
 								/>
 								)
-
 							}
 							</>
 						)}

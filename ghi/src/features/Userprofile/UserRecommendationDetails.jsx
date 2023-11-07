@@ -1,7 +1,6 @@
 import { useGetRecommendationDetailsQuery, useDeleteRecommendationDetailsMutation, useGetTokenQuery } from "../../app/apiSlice"
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import './Userprofile.css'
-import vegas from './images/vegas.jpg';
 import BackBtn from "../BackButton/BackBtn";
 
 function UserRecommendationDetails() {

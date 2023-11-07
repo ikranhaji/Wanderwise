@@ -10,7 +10,6 @@ const Login = () => {
 	const [password, setPassword] = useState('');
 	const [formError, setFormError] = useState({
 		username: '',
-		password: '',
 	});
 
 	const navigate = useNavigate();
@@ -18,14 +17,13 @@ const Login = () => {
 		e.preventDefault();
 		let inputError = {
 			username: '',
-			password: '',
 		};
 		const response = await login({ username, password });
 		if (response.error) {
-			inputError.username = 'Account does not exist';
+			inputError.username = 'Cannot login with those credentials';
 			setFormError(inputError);
 		} else {
-			navigate('/myprofile');
+			navigate('/createrecommendations');
 		}
 	};
 	return (
